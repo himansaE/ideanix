@@ -1,0 +1,13 @@
+.def_btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  border: 1px solid white;
+  transition: color 150ms, background-color 150ms;
+}
+.def_btn:hover {
+  background-color: black;
+  color: white;
+}

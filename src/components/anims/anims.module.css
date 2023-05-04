@@ -1,0 +1,11 @@
+.blob_circle_con {
+  position: absolute;
+  filter: url(#goo);
+}
+.blob_circle {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  border-radius: 50%;
+}
