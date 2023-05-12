@@ -18,8 +18,8 @@ export const nav_items: {
   url: string;
 }[] = [
   {
-    name: "About",
-    url: "#about",
+    name: "Stages",
+    url: "#stages",
   },
   {
     name: "Rules",

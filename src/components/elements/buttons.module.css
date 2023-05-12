@@ -6,8 +6,19 @@
   font-size: 1em;
   border: 1px solid white;
   transition: color 150ms, background-color 150ms;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
 .def_btn:hover {
   background-color: black;
   color: white;
+}
+.def_btn:active {
+  background-color: transparent;
+  color: white;
+}
+.invert {
+  color: white;
+  background-color: black;
 }
