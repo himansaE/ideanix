@@ -1,7 +1,13 @@
+import { cssClasses } from "@/lib/lib";
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"], weight: ["600", "400"] });
+
 export default function Timeline() {
   return (
     <>
-      <h1 className="section-header">TimeLine</h1>
+      <h1 className={cssClasses("section-header", inter.className)}>
+        TimeLine
+      </h1>
     </>
   );
 }

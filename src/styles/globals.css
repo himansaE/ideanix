@@ -61,6 +61,7 @@ a {
 .section-header {
   font-size: 2em;
   margin: 10px 0;
+  padding: 0 21px;
 }
 @media (prefers-color-scheme: dark) {
   html {
