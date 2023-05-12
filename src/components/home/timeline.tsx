@@ -6,7 +6,7 @@ export default function Timeline() {
   return (
     <>
       <h1 className={cssClasses("section-header", inter.className)}>
-        TimeLine
+        Timeline of the Project
       </h1>
     </>
   );

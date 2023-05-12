@@ -5,7 +5,11 @@
   padding: 30px;
   gap: 15px 35px;
 }
-
+.page_des {
+  padding: 10px 40px;
+  font-size: 0.9em;
+  color: #ffffffba;
+}
 @media (max-width: 1255px) {
   .stage_cards {
     flex-wrap: wrap;

@@ -11,7 +11,7 @@ import { cssClasses, joinObject } from "@/lib/lib";
 import { ProjectTitles, project_titles } from "@/lib/projectData";
 import { ActionButton } from "../elements/buttons";
 import { NavLogoType } from "../navbar/navbar";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import styles from "./home.module.css";
 
 interface LogoImagePosData {
@@ -23,7 +23,11 @@ interface LogoImagePosData {
   scale?: number;
 }
 const inter = Inter({ subsets: ["latin"], weight: ["800", "400"] });
-
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal"],
+});
 export default function Home({
   setNavLogoType,
 }: {
@@ -163,12 +167,10 @@ export default function Home({
               </div>
             ))}
           </div>
-          <div className={cssClasses(styles.home_disc, inter.className)}>
+          <div className={cssClasses(styles.home_disc, montserrat.className)}>
             IdeaniX is a transformative program that empowers university
             students with the knowledge, skills, and guidance to excel in the IT
-            and entrepreneurship fields. Through a series of events and
-            competitions, students explore their creative potential, gain
-            industry insights, and turn their innovative ideas into reality.
+            and entrepreneurship fields.
           </div>
           <div className={styles.home_button_list}>
             <ActionButton

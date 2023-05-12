@@ -1,6 +1,6 @@
 import { project_stages } from "@/lib/projectData";
 import styles from "./stages_page.module.css";
-import { Inter, Lato } from "next/font/google";
+import { Inter, Lato, Montserrat } from "next/font/google";
 import { cssClasses } from "@/lib/lib";
 import { projectStageInterface } from "@/lib/projectData";
 import { ActionButton } from "@/components/elements/buttons";
@@ -9,6 +9,11 @@ import { ActionButton } from "@/components/elements/buttons";
 
 const inter = Inter({ subsets: ["latin"], weight: ["600", "400"] });
 const lato = Lato({ subsets: ["latin"], weight: "700" });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal"],
+});
 export default function StagesPage() {
   // const stage_cards_list = useRef<HTMLDivElement>(null);
   // const scroll_helper = useRef<HTMLDivElement>(null);
@@ -39,6 +44,12 @@ export default function StagesPage() {
         <h2 className={cssClasses("section-header", inter.className)}>
           What are you developing for?
         </h2>
+        <p className={cssClasses(styles.page_des, montserrat.className)}>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus vel
+          exercitationem voluptatem, odit aliquid aperiam labore reprehenderit.
+          Facere beatae asperiores corporis quasi impedit accusantium, nobis
+          libero. Consequatur, ab officiis? Quam.
+        </p>
         <div className={styles.stage_cards}>
           {project_stages.map((s) => (
             <StageCard data={s} key={s.name} />
