@@ -45,7 +45,10 @@
 .main_con {
   width: 100%;
 }
-
+.card_title {
+  font-size: 2em;
+  margin: 10px 0;
+}
 .card {
   position: relative;
   overflow: hidden;

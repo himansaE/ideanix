@@ -70,7 +70,7 @@ export function StageCard({ data }: { data: projectStageInterface }) {
           style={{ backgroundImage: `url(${data.image})` }}
         />
         <div className={styles.content}>
-          <div className={cssClasses(styles.title, lato.className)}>
+          <div className={cssClasses(styles.card_title, lato.className)}>
             {data.name}
           </div>
           <div className={styles.tagline}>{data.tagline}</div>
