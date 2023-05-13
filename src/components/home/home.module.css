@@ -51,8 +51,8 @@
 .home_title > div {
   margin-right: 6px;
   color: #ffffffc7;
-  padding-bottom: 12px;
-  margin-bottom: -12px;
+  padding-bottom: 24px;
+  margin-bottom: -24px;
   transition: 300ms;
 }
 .home_title_selected {

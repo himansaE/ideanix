@@ -41,7 +41,7 @@ export const project_stages: projectStageInterface[] = [
       "Empowering innovation and entrepreneurship through expert-led guidance and industry insights.",
     description:
       "Equip students with the knowledge and skills needed to succeed in the IT and entrepreneurship fields. Through a series of inspiring sessions, participants explore various career paths within the industry. They learn the fundamentals of design thinking (DT) and business management canvas (BMC) to identify problems, generate innovative solutions, and develop their ideas into startup-level concepts.",
-    image: "/images/guidance.jpg",
+    image: "/images/guidance.webp",
   },
   {
     name: "Ideathon & Designathon",
@@ -49,7 +49,7 @@ export const project_stages: projectStageInterface[] = [
       "Unleashing creativity and problem-solving skills to shape innovative ideas and refine designs.",
     description:
       "Participants unleash their creativity and problem-solving abilities in the ideathon chapter, where they present their unique ideas. They then move into the designathon segment, where they enhance their designs by incorporating user-centric approaches, refining usability, aesthetics, and functionality.Their designs are evaluated by a panel of judges, showcasing their innovation and design skills.",
-    image: "/images/designathon.jpg",
+    image: "/images/designathon.webp",
   },
   {
     name: "Hackathon",
@@ -57,7 +57,7 @@ export const project_stages: projectStageInterface[] = [
       "Collaborative coding marathon to transform ideas into functional prototypes and solutions.",
     description:
       "In the final phase, participants transform their ideas into tangible outcomes. Through an intensive hackathon, they develop functional prototypes or final products, overcoming technical challenges and incorporating cutting-edge technologies. Their final outputs are presented to the panel of judges, who assess the innovation, technical implementation, and viability of their solutions.",
-    image: "/images/hackathon.jpg",
+    image: "/images/hackathon.webp",
   },
   {
     name: "TED Talks with Industry",
@@ -65,7 +65,7 @@ export const project_stages: projectStageInterface[] = [
       "Inspiring talks by industry leaders to foster knowledge, networking, and career exploration.",
     description:
       "Expand your horizons and gain invaluable industry insights through engaging TED Talks with seasoned professionals. Explore the latest trends, technologies, and success stories, paving the way for your future in the dynamic world of IT and entrepreneurship.",
-    image: "/images/ted.jpg",
+    image: "/images/ted.webp",
   },
 ];
 

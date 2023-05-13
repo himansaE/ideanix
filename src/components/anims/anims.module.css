@@ -21,22 +21,24 @@
   }
 }
 
-.animated_square {
-  --scale: max(40vw, 400px);
-  position: absolute;
-  height: var(--scale);
-  width: var(--scale);
-  border-radius: 39px;
-  background-color: rgb(255 255 255 / 10%);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  z-index: 10;
-  box-shadow: 0 0 55px #ffffff33;
-  border: 1px solid #ffffff29;
-  top: 66%;
-  left: 68%;
-  transform: rotate(45deg);
-  animation: square infinite 29s;
+@media screen and (max-width: 400px) {
+  .animated_square {
+    --scale: max(40vw, 400px);
+    position: absolute;
+    height: var(--scale);
+    width: var(--scale);
+    border-radius: 39px;
+    background-color: rgb(255 255 255 / 10%);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+    box-shadow: 0 0 55px #ffffff33;
+    border: 1px solid #ffffff29;
+    top: 66%;
+    left: 68%;
+    transform: rotate(45deg);
+    animation: square infinite 29s;
+  }
 }
 
 @keyframes square {

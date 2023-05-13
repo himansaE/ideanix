@@ -1,5 +1,6 @@
 .def_btn {
-  background-color: white;
+  background-color: black;
+  background-color: var(--button-back, white);
   color: black;
   padding: 10px 20px;
   border-radius: 5px;
@@ -11,13 +12,11 @@
   user-select: none;
 }
 .def_btn:hover {
-  background-color: black;
   color: white;
+  background-color: var(--button-hover-back, rgba(255, 255, 255, 0.099));
+  backdrop-filter: blur(3px);
 }
-.def_btn:active {
-  background-color: transparent;
-  color: white;
-}
+
 .invert {
   color: white;
   background-color: black;

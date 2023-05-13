@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { cssClasses } from "../../lib/lib";
 import Link from "next/link";
-import { useState } from "react";
-// import { useState } from "react";
 
 const ft_montserrat = Montserrat({
   subsets: ["latin"],

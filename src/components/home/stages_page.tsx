@@ -3,8 +3,7 @@ import styles from "./stages_page.module.css";
 import { Inter, Lato, Montserrat } from "next/font/google";
 import { cssClasses } from "@/lib/lib";
 import { projectStageInterface } from "@/lib/projectData";
-import { ActionButton } from "@/components/elements/buttons";
-
+import Image from "next/image";
 // import { useEffect, useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"], weight: ["600", "400"] });
@@ -67,17 +66,23 @@ export function StageCard({ data }: { data: projectStageInterface }) {
       <div className={styles.card}>
         <div
           className={styles.img}
-          style={{ backgroundImage: `url(${data.image})` }}
-        />
+          // style={{ backgroundImage: `url(${data.image})` }}
+        >
+          <Image
+            src={data.image}
+            alt=""
+            width={512}
+            height={512}
+            loading="lazy"
+          />
+        </div>
         <div className={styles.content}>
           <div className={cssClasses(styles.card_title, lato.className)}>
             {data.name}
           </div>
           <div className={styles.tagline}>{data.tagline}</div>
         </div>
-        <div className={styles.button}>
-          <ActionButton text="See More" invert />
-        </div>
+        <div className={styles.button}></div>
       </div>
     </div>
   );
