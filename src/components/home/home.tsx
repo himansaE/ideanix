@@ -75,7 +75,7 @@ export default function Home({
       } else {
         setSiteProjectStage(0);
       }
-    }, 5000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [site_project_stage]);
 

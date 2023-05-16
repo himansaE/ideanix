@@ -69,7 +69,19 @@ export const project_stages: projectStageInterface[] = [
   },
 ];
 
-export const project_timeline = [
+export interface ProjectDateInterface {
+  time: number;
+  items: {
+    name: string;
+  }[];
+}
+
+export interface ProjectPhraseInterface {
+  phrase: number;
+  dates: ProjectDateInterface[];
+}
+
+export const project_timeline: ProjectPhraseInterface[] = [
   {
     phrase: 1,
     dates: [
