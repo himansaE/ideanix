@@ -78,12 +78,14 @@ export interface ProjectDateInterface {
 
 export interface ProjectPhraseInterface {
   phrase: number;
+  name: string;
   dates: ProjectDateInterface[];
 }
 
 export const project_timeline: ProjectPhraseInterface[] = [
   {
     phrase: 1,
+    name: "Guidance Sessions",
     dates: [
       {
         time: new Date().getTime(),
@@ -103,6 +105,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
   },
   {
     phrase: 2,
+    name: "Ideathon & Designathon",
     dates: [
       {
         time: new Date().getTime(),
@@ -120,6 +123,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
   },
   {
     phrase: 3,
+    name: "Hackathon",
     dates: [
       {
         time: new Date().getTime(),

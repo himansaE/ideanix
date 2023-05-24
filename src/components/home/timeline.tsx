@@ -11,7 +11,23 @@ export default function Timeline() {
       <h1 className={cssClasses("section-header", inter.className)}>
         Timeline of the Project
       </h1>
-      <DateChip data={project_timeline[0].dates[0]} />
+      <div className={style.phrases_con}>
+        <div className={style.img}></div>
+        <div className={style.phrases_list}>
+          {project_timeline.map((i) => (
+            <div key={i.phrase} className={style.phrase}>
+              <h1 className={cssClasses(style.phrase_head, inter.className)}>
+                Prase {i.phrase} ({i.name})
+              </h1>
+              {i.dates.map((d) => (
+                <div key={d.time}>
+                  <DateChip data={d} />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
