@@ -2,17 +2,52 @@ import { cssClasses } from "@/lib/lib";
 import { Inter, Lato } from "next/font/google";
 import style from "./timeline.module.css";
 import { ProjectDateInterface, project_timeline } from "@/lib/projectData";
+import BallUnderText from "../anims/ballUnderText";
+import { CSSProperties, useState } from "react";
 const inter = Inter({ subsets: ["latin"], weight: ["600", "400"] });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 export default function Timeline() {
+  const [mouse_pos, setMousePos] = useState({
+    x: -1121,
+    y: -12212,
+    hidden: true,
+  });
   return (
-    <>
-      <h1 className={cssClasses("section-header", inter.className)}>
+    <div
+      className={style.con}
+      onMouseMove={(e) => {
+        setMousePos({
+          x: e.clientX,
+          y: e.clientY,
+          hidden: false,
+        });
+      }}
+      onMouseLeave={() => {
+        setMousePos({
+          x: -1220,
+          y: -1220,
+          hidden: true,
+        });
+      }}
+      style={
+        {
+          "--m-x": mouse_pos.x + "px",
+          "--m-y": mouse_pos.y + "px",
+          "--m-o": mouse_pos.hidden ? 0 : 1,
+        } as CSSProperties
+      }
+    >
+      <h1
+        className={cssClasses("section-header", inter.className, style.title)}
+      >
         Timeline of the Project
       </h1>
+      <div className={style.back}></div>
       <div className={style.phrases_con}>
-        <div className={style.img}></div>
+        <div className={style.img}>
+          <BallUnderText text="Timeline" />
+        </div>
         <div className={style.phrases_list}>
           {project_timeline.map((i) => (
             <div key={i.phrase} className={style.phrase}>
@@ -20,7 +55,7 @@ export default function Timeline() {
                 Prase {i.phrase} ({i.name})
               </h1>
               {i.dates.map((d) => (
-                <div key={d.time}>
+                <div key={d.time + Math.random()}>
                   <DateChip data={d} />
                 </div>
               ))}
@@ -28,7 +63,7 @@ export default function Timeline() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

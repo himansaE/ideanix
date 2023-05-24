@@ -39,22 +39,21 @@ export default function StagesPage() {
   // }, []);
   return (
     <>
-      <div className={styles.sticky}>
-        <h2 className={cssClasses("section-header", inter.className)}>
-          What are you developing for?
-        </h2>
-        <p className={cssClasses(styles.page_des, montserrat.className)}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus vel
-          exercitationem voluptatem, odit aliquid aperiam labore reprehenderit.
-          Facere beatae asperiores corporis quasi impedit accusantium, nobis
-          libero. Consequatur, ab officiis? Quam.
-        </p>
-        <div className={styles.stage_cards}>
-          {project_stages.map((s) => (
-            <StageCard data={s} key={s.name} />
-          ))}
-        </div>
+      <h2 className={cssClasses("section-header", inter.className)}>
+        What are you developing for?
+      </h2>
+      <p className={cssClasses(styles.page_des, montserrat.className)}>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus vel
+        exercitationem voluptatem, odit aliquid aperiam labore reprehenderit.
+        Facere beatae asperiores corporis quasi impedit accusantium, nobis
+        libero. Consequatur, ab officiis? Quam.
+      </p>
+      <div className={styles.stage_cards}>
+        {project_stages.map((s) => (
+          <StageCard data={s} key={s.name} />
+        ))}
       </div>
+
       {/* <div className={styles.scroll_helper} ref={scroll_helper}></div> */}
     </>
   );

@@ -1,0 +1,44 @@
+.con {
+  height: 100%;
+  width: 100%;
+}
+.ball {
+  position: fixed;
+  height: 170px;
+  width: 170px;
+  background-color: #272d64;
+  top: 363px;
+  border-radius: 50%;
+  z-index: -1;
+  left: var(--m-x);
+  top: var(--m-y);
+  opacity: var(--m-o);
+  transform: translate(-50%, -50%);
+  transition: opacity 300ms;
+  will-change: left top;
+}
+
+.text {
+  height: 100%;
+  width: 100%;
+  font-size: 9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "__Lato_2246b7";
+  text-transform: uppercase;
+  color: #0c0c0c;
+  user-select: none;
+  cursor: default;
+  z-index: 2;
+  position: relative;
+}
+@media (hover: none),
+  (hover: on-demand),
+  (-moz-touch-enabled: 1),
+  (pointer: coarse) {
+  .ball {
+    transition-property: opacity, top, left;
+    transition: 150ms;
+  }
+}
