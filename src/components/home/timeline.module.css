@@ -73,10 +73,20 @@
   overflow: hidden;
   position: inherit;
   clip-path: inset(0 0 0 0);
+  --m-x: 25%;
+  --m-y: 50%;
+  --m-o: 1;
 }
 .title {
-  z-index: 2;
-  position: relative;
+  z-index: 4;
+  position: fixed;
+  top: 50vh;
+  left: 4%;
+  font-size: 4em;
+  transform: translate(0, -50%);
+}
+.title > br:nth-child(2) {
+  display: none;
 }
 .phrase_head {
   margin: 10px;
@@ -105,6 +115,16 @@
   z-index: 0;
   top: 0;
 }
+
+@media screen and (max-width: 1160px) {
+  .title > br:nth-child(2) {
+    display: block;
+  }
+  .title {
+    left: 8%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .img {
     position: absolute;
@@ -115,6 +135,16 @@
   }
   .phrases_con {
     justify-content: center;
+  }
+  .title {
+    position: relative;
+    z-index: 12;
+    top: 60px;
+    left: 0;
+    text-align: center;
+  }
+  .title > br {
+    display: none;
   }
 }
 

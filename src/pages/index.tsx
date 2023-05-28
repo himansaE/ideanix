@@ -6,6 +6,7 @@ import { cssClasses } from "@/lib/lib";
 import StagesPage from "@/components/home/stages_page";
 import Home from "@/components/home/home";
 import Timeline from "@/components/home/timeline";
+import Head from "next/head";
 
 // fonts
 
@@ -14,7 +15,10 @@ export default function HomePage() {
 
   return (
     <>
-      <NavBar current="" logoType={nav_logo_type} />
+      <Head>
+        <title>IDEANIX: Where ideas become reality.</title>
+      </Head>
+      <NavBar current="" logoType={nav_logo_type} fix_size />
       <main className={styles.main}>
         <BlurFilter />
         <section

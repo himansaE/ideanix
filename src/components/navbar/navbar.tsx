@@ -32,6 +32,7 @@ export const nav_items: {
 interface NavbarProps {
   current?: string;
   logoType?: NavLogoType;
+  fix_size?: boolean;
 }
 export enum NavLogoType {
   ideanix,
@@ -41,6 +42,7 @@ export enum NavLogoType {
 export default function NavBar({
   current = undefined,
   logoType = NavLogoType.ideanix,
+  fix_size = false,
 }: NavbarProps) {
   return (
     <>
@@ -83,7 +85,7 @@ export default function NavBar({
           ))}
         </div>
       </nav>
-      <div className={style.fake}></div>
+      <div className={fix_size ? style.fake : ""}></div>
     </>
   );
 }

@@ -40,13 +40,13 @@ export default function StagesPage() {
   return (
     <>
       <h2 className={cssClasses("section-header", inter.className)}>
-        What are you developing for?
+        Phases Of IdeaniX
       </h2>
       <p className={cssClasses(styles.page_des, montserrat.className)}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus vel
-        exercitationem voluptatem, odit aliquid aperiam labore reprehenderit.
-        Facere beatae asperiores corporis quasi impedit accusantium, nobis
-        libero. Consequatur, ab officiis? Quam.
+        The Phases of IdeaniX are carefully designed to provide a comprehensive
+        and transformative journey for participants. With each phase, IdeaniX
+        aims to expand horizons, foster innovation, and empower students to
+        realize their full potential in the realms of IT and entrepreneurship.
       </p>
       <div className={styles.stage_cards}>
         {project_stages.map((s) => (

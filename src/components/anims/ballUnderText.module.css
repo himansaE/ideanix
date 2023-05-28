@@ -15,7 +15,7 @@
   opacity: var(--m-o);
   transform: translate(-50%, -50%);
   transition: opacity 300ms;
-  will-change: left top;
+  will-change: left, top, opacity;
 }
 
 .text {
@@ -40,5 +40,6 @@
   .ball {
     transition-property: opacity, top, left;
     transition: 150ms;
+    background-color: #1d2147;
   }
 }

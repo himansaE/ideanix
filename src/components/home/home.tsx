@@ -168,9 +168,12 @@ export default function Home({
             ))}
           </div>
           <div className={cssClasses(styles.home_disc, montserrat.className)}>
-            IdeaniX is a transformative program that empowers university
-            students with the knowledge, skills, and guidance to excel in the IT
-            and entrepreneurship fields.
+            Embark on a transformative journey with IdeaniX, where participants
+            are guided by industry experts, unleash their creativity, and turn
+            ideas into reality. Experience enlightening sessions, exhilarating
+            challenges, and thrilling transformations. Expand horizons, foster
+            innovation, and realize your full potential in the realms of IT and
+            entrepreneurship.
           </div>
           <div className={styles.home_button_list}>
             <ActionButton

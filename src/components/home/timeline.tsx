@@ -30,6 +30,13 @@ export default function Timeline() {
           hidden: true,
         });
       }}
+      onMouseEnter={(e) => {
+        setMousePos({
+          x: e.clientX,
+          y: e.clientY,
+          hidden: false,
+        });
+      }}
       style={
         {
           "--m-x": mouse_pos.x + "px",
@@ -41,7 +48,8 @@ export default function Timeline() {
       <h1
         className={cssClasses("section-header", inter.className, style.title)}
       >
-        Timeline of the Project
+        Timeline <br /> of the
+        <br /> Project
       </h1>
       <div className={style.back}></div>
       <div className={style.phrases_con}>
