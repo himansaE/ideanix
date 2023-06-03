@@ -9,7 +9,7 @@ import Image from "next/image";
 import BlurSquare from "../anims/blurSquare";
 import { cssClasses, joinObject } from "@/lib/lib";
 import { ProjectTitles, project_titles } from "@/lib/projectData";
-import { ActionButton } from "../elements/buttons";
+import { ActionButton, LinkButton } from "../elements/buttons";
 import { NavLogoType } from "../navbar/navbar";
 import { Inter, Montserrat } from "next/font/google";
 import styles from "./home.module.css";
@@ -176,10 +176,7 @@ export default function Home({
             entrepreneurship.
           </div>
           <div className={styles.home_button_list}>
-            <ActionButton
-              text="Register Now"
-              action={() => console.log("bhi")}
-            />
+            <LinkButton text="Register Now" link="/register" />
             <ActionButton text="Watch Intro " invert />
           </div>
         </div>

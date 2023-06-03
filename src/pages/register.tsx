@@ -33,6 +33,8 @@ export default function Register() {
   const [curr_index, setCurrIndex] = useState(0);
   const [last_index_complete, setLastStateComplete] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  const [button_click, nextClick] = useState(0);
   return (
     <ThemeProvider theme={darkTheme}>
       <Head>
@@ -58,11 +60,13 @@ export default function Register() {
             index={curr_index}
             setLastStateComplete={setLastStateComplete}
             is_rendered
+            button_click={button_click}
           />
         </div>
         <div className={styles.form_buttons_con}>
           <div className={styles.form_buttons}>
             <Button
+              className={curr_index == 0 ? styles.hide_button : ""}
               variant="outlined"
               disabled={curr_index == 0 || submitting}
               onClick={() => {
@@ -73,9 +77,11 @@ export default function Register() {
             </Button>
             <Button
               variant="contained"
-              disabled={submitting || !last_index_complete}
+              disabled={submitting}
               onClick={() => {
                 if (submitting) return;
+                nextClick((i) => i + 1);
+                if (!last_index_complete) return;
                 if (curr_index >= register_form_data.length - 1)
                   return setSubmitting(true);
                 setCurrIndex((i) => {

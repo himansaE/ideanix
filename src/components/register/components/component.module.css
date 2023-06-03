@@ -1,0 +1,20 @@
+.box {
+  background-color: #ffffff0f;
+  padding: 20px 20px 30px 20px;
+  border-radius: 11px;
+  margin: 32px 0;
+  border: 1px solid transparent;
+}
+.small_box {
+  padding: 10px 20px;
+}
+.box_error {
+  border: 1px solid #b84444;
+}
+.box_err_text {
+  margin: 6px 0;
+  font-size: 0.8em;
+  gap: 5px;
+  align-items: center;
+  color: #ff6868;
+}

@@ -15,6 +15,10 @@
   width: 100%;
   margin: 0 21px;
 }
+.hide_button {
+  opacity: 0;
+  touch-action: none;
+}
 .content {
   flex: 1;
 }
@@ -24,8 +28,20 @@
 }
 .form {
   display: flex;
+  justify-content: center;
 }
-.sub_con {
+.form_con {
+  max-width: 900px;
+  margin: 40px;
+  width: 100%;
 }
-.sub {
+.input {
+  width: 100%;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .form_con {
+    margin: 40px 20px;
+  }
 }

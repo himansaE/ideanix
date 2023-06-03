@@ -12,6 +12,7 @@ export interface RegisterSubPageProps {
   setLastStateComplete: Dispatch<SetStateAction<boolean>>;
   index: number;
   is_rendered: boolean;
+  button_click: number;
 }
 export const register_form_data: FormDataInterface[] = [
   {

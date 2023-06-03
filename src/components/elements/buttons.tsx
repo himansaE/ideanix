@@ -39,14 +39,12 @@ export function LinkButton(props: LinkButtonProps) {
   return (
     <div>
       <Link href={props.link}>
-        <div
-          className={cssClasses(
-            styles.def_btn,
-            props.invert ? styles.invert : ""
-          )}
-        >
-          <span className={inter.className}>{props.text} </span>
-        </div>
+        <ActionButton
+          text={props.text}
+          invert={props.invert}
+          button_background={props.button_background}
+          button_hover_background={props.button_hover_background}
+        />
       </Link>
     </div>
   );
