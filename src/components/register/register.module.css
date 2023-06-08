@@ -30,6 +30,15 @@
   display: flex;
   justify-content: center;
 }
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000085;
+  z-index: 15;
+}
 .form_con {
   max-width: 900px;
   margin: 40px;
@@ -44,4 +53,17 @@
   .form_con {
     margin: 40px 20px;
   }
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+}
+.error_data {
+  max-width: 900px;
+  width: 100%;
+  margin: -50px 40px 0 40px;
+}
+.error_data div {
+  font-size: 1em;
 }

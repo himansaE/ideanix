@@ -40,7 +40,7 @@ export default function StagesPage() {
   return (
     <>
       <h2 className={cssClasses("section-header", inter.className)}>
-        Phases Of IdeaniX
+        Phases Of IdeaNiX
       </h2>
       <p className={cssClasses(styles.page_des, montserrat.className)}>
         The Phases of IdeaniX are carefully designed to provide a comprehensive

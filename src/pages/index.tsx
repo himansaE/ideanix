@@ -11,7 +11,7 @@ import Head from "next/head";
 // fonts
 
 export default function HomePage() {
-  const [nav_logo_type, setNavLogoType] = useState(NavLogoType.none);
+  const [nav_logo_type, setNavLogoType] = useState(NavLogoType._NONE);
 
   return (
     <>

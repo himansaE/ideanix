@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CSSProperties } from "react";
 interface ActionButtonProps {
   text: string;
-  action?: () => any;
+  action?: () => void;
   invert?: boolean;
   button_background?: string;
   button_hover_background?: string;

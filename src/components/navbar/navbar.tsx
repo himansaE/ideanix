@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const ft_montserrat = Montserrat({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500"],
   style: ["normal"],
 });
 
@@ -17,15 +17,15 @@ export const nav_items: {
 }[] = [
   {
     name: "Stages",
-    url: "#stages",
+    url: "/#stages",
   },
   {
     name: "Rules",
-    url: "#rules",
+    url: "/#rules",
   },
   {
     name: "Road Map",
-    url: "#roadmap",
+    url: "/#roadmap",
   },
 ];
 
@@ -35,13 +35,13 @@ interface NavbarProps {
   fix_size?: boolean;
 }
 export enum NavLogoType {
-  ideanix,
-  ieee,
-  none,
+  _IDEANIX,
+  _IEEE,
+  _NONE,
 }
 export default function NavBar({
   current = undefined,
-  logoType = NavLogoType.ideanix,
+  logoType = NavLogoType._IDEANIX,
   fix_size = false,
 }: NavbarProps) {
   return (
@@ -50,7 +50,7 @@ export default function NavBar({
         <div className={style.logo_con}>
           <Image
             style={{
-              display: logoType == NavLogoType.ideanix ? "block" : "none",
+              display: logoType == NavLogoType._IDEANIX ? "block" : "none",
             }}
             className={style.logo}
             loading="eager"
@@ -61,7 +61,7 @@ export default function NavBar({
           />
           <Image
             style={{
-              display: logoType == NavLogoType.ieee ? "block" : "none",
+              display: logoType == NavLogoType._IEEE ? "block" : "none",
             }}
             src="/ieee_logo.webp"
             alt=""

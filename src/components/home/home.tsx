@@ -36,10 +36,10 @@ export default function Home({
   const [site_project_stage, setSiteProjectStage] = useState(
     ProjectTitles.ideathon
   );
-  const [page_scroll, setPageScroll] = useState(0);
+  const [, setPageScroll] = useState(0);
 
   // eslint-disable-next-line no-unused-vars
-  const [isMounted, setIsMounted] = useState(true);
+  const [isMounted] = useState(true);
 
   // use for logo shrinking
   const main_logo_ref = useRef<HTMLDivElement>(null);
@@ -94,8 +94,8 @@ export default function Home({
 
     // change the visibility of nav logo - 20 is padding
     if (main_logo_pos.top <= nav_img_pos.height + 20)
-      setNavLogoType(NavLogoType.none);
-    else setNavLogoType(NavLogoType.ieee);
+      setNavLogoType(NavLogoType._NONE);
+    else setNavLogoType(NavLogoType._IEEE);
 
     // don't need to calculate logo is not visitable
     if (main_logo_pos.top <= nav_img_pos.top) return;

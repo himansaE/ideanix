@@ -8,6 +8,11 @@
 .small_box {
   padding: 10px 20px;
 }
+.box_content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .box_error {
   border: 1px solid #b84444;
 }
@@ -17,4 +22,11 @@
   gap: 5px;
   align-items: center;
   color: #ff6868;
+}
+.inp_text {
+  margin: 10px 0px 20px 0;
+}
+.input {
+  width: 100%;
+  max-width: 500px;
 }

@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import Rules_N_Reg from "./steps/rules";
 import TeamInfo from "./steps/teamInfo";
+import MemberInfo from "./steps/memberInfo";
 
 interface FormDataInterface {
   i: number;
@@ -14,6 +15,18 @@ export interface RegisterSubPageProps {
   is_rendered: boolean;
   button_click: number;
 }
+export interface InputDataInterface {
+  value: string;
+  error: boolean;
+  error_text: string;
+}
+
+export const initInputData: () => InputDataInterface = () => ({
+  value: "",
+  error: false,
+  error_text: "",
+});
+
 export const register_form_data: FormDataInterface[] = [
   {
     i: 1,
@@ -28,6 +41,6 @@ export const register_form_data: FormDataInterface[] = [
   {
     i: 3,
     name: "Member Information",
-    elem: Rules_N_Reg,
+    elem: MemberInfo,
   },
 ];
