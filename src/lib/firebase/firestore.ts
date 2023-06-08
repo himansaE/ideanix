@@ -1,9 +1,12 @@
 import admin from "firebase-admin";
 import { getFirestore } from "firebase-admin/firestore";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const fire_config = require("/admin-sdk.json");
-
+let fire_config;
+try {
+  fire_config = require("/admin-sdk.json");
+} catch {
+  fire_config = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE ?? "");
+}
 try {
   admin.initializeApp({
     credential: admin.credential.cert(fire_config),

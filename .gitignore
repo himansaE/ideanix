@@ -36,3 +36,5 @@ next-env.d.ts
 
 # firebase 
 admin-sdk.json
+
+.vercel
