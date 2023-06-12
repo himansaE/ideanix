@@ -146,6 +146,9 @@
   .title > br {
     display: none;
   }
+  .con {
+    padding: 100px 0;
+  }
 }
 
 @media screen and (max-width: 500px) {

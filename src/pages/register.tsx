@@ -111,7 +111,6 @@ function RegisterPage() {
 
   return (
     <div className={styles.con}>
-      {/* <DialogBox open title="Error while submitting." /> */}
       {state.status === _SubmittingStatus._SUBMITTING ? (
         <div className={styles.popup}></div>
       ) : (

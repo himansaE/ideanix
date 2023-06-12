@@ -47,28 +47,31 @@ export default function NavBar({
   return (
     <>
       <nav className={style.nav}>
-        <div className={style.logo_con}>
-          <Image
-            style={{
-              display: logoType == NavLogoType._IDEANIX ? "block" : "none",
-            }}
-            className={style.logo}
-            loading="eager"
-            src="/logo_colored.webp"
-            height={40}
-            width={110}
-            alt="Ideanix Logo"
-          />
-          <Image
-            style={{
-              display: logoType == NavLogoType._IEEE ? "block" : "none",
-            }}
-            src="/ieee_logo.webp"
-            alt=""
-            height={40}
-            width={83}
-          />
-        </div>
+        <Link href="/">
+          <div className={style.logo_con}>
+            <Image
+              style={{
+                display: logoType == NavLogoType._IDEANIX ? "block" : "none",
+              }}
+              className={style.logo}
+              loading="eager"
+              src="/logo_colored.webp"
+              height={40}
+              width={110}
+              alt="Ideanix Logo"
+            />
+            <Image
+              style={{
+                display: logoType == NavLogoType._IEEE ? "block" : "none",
+              }}
+              src="/ieee_logo.webp"
+              alt=""
+              height={40}
+              width={83}
+            />
+          </div>
+        </Link>
+
         <div className={style.list}>
           {nav_items.map((i) => (
             <Link

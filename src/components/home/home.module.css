@@ -30,8 +30,11 @@
   transform-origin: top left;
   position: fixed;
   z-index: 20;
-  transition: opacity 250ms;
+  transition: opacity 250ms, top 50ms, left 50ms, transform 50ms;
+  will-change: top, left, transform;
+  transition-timing-function: linear;
 }
+
 .home_title {
   display: flex;
   flex-wrap: wrap;

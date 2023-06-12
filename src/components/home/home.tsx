@@ -36,13 +36,14 @@ export default function Home({
   const [site_project_stage, setSiteProjectStage] = useState(
     ProjectTitles.ideathon
   );
-  const [, setPageScroll] = useState(0);
 
   // eslint-disable-next-line no-unused-vars
   const [isMounted] = useState(true);
 
   // use for logo shrinking
   const main_logo_ref = useRef<HTMLDivElement>(null);
+  const logo_ref = useRef<HTMLImageElement>(null);
+  const animation_ref = useRef<number | null>(null);
   const nav_img_pos: LogoImagePosData = {
     left: 20,
     top: 10,
@@ -50,20 +51,18 @@ export default function Home({
     height: 40,
     scale: 0.4,
   };
-  const [logo_image_data, setLogoImageData] = useState(nav_img_pos);
 
-  // TODO:: use requestAnimationFrame
+  const logo_image_data = nav_img_pos;
+
   useEffect(() => {
     if (isMounted) {
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("resize", handleScroll);
-
-      if (main_logo_ref.current) handleScroll();
+      handleScroll();
+      logo_image_data.rendered = true;
     }
-
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      if (animation_ref.current) {
+        cancelAnimationFrame(animation_ref.current);
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMounted]);
@@ -79,47 +78,53 @@ export default function Home({
     return () => clearInterval(timer);
   }, [site_project_stage]);
 
-  // called on scroll
-  //FIXME:: use requestAnimationFrame and remove setSates from callback
   const handleScroll = () => {
     // handle shrinkable logo
-    if (!main_logo_ref.current) return;
-
-    setPageScroll(window.pageYOffset);
+    if (!main_logo_ref.current || !logo_ref.current)
+      return (animation_ref.current = requestAnimationFrame(handleScroll));
 
     const main_logo_pos = main_logo_ref.current.getBoundingClientRect();
 
-    if (main_logo_pos.top <= nav_img_pos.top)
-      setLogoImageData(joinObject(nav_img_pos, { rendered: true }));
+    // place logo on top
+    if (main_logo_pos.top <= nav_img_pos.top) {
+      logo_ref.current.style.opacity = logo_image_data.rendered ? "1" : "0";
+      logo_ref.current.style.top = nav_img_pos.top + "px";
+      logo_ref.current.style.position = logo_image_data.rendered
+        ? "fixed"
+        : "unset";
+      logo_ref.current.style.left = nav_img_pos.left + "px";
+      logo_ref.current.style.transform = `scale(${nav_img_pos.scale})`;
+    }
 
-    // change the visibility of nav logo - 20 is padding
+    // change the visibility of nav logo  -- - 20 is padding
     if (main_logo_pos.top <= nav_img_pos.height + 20)
       setNavLogoType(NavLogoType._NONE);
     else setNavLogoType(NavLogoType._IEEE);
 
     // don't need to calculate logo is not visitable
-    if (main_logo_pos.top <= nav_img_pos.top) return;
+    if (main_logo_pos.top <= nav_img_pos.top)
+      return (animation_ref.current = requestAnimationFrame(handleScroll));
 
-    // calculate image position
     const distance_y = main_logo_pos.top - nav_img_pos.top;
-
-    //TODO:: USE SCREEN WIDTH for
     const scale =
       0.4 + distance_y / Math.abs(main_logo_pos.left - nav_img_pos.left) / 1;
 
-    // set position of main logo
-    setLogoImageData(
-      joinObject(logo_image_data, {
-        rendered: true,
-        top: Math.max(main_logo_pos.y, nav_img_pos.top),
-        left: Math.min(
-          Math.max(nav_img_pos.left, distance_y * 1.78 + 20),
-          main_logo_pos.left
-        ),
-        scale: Math.min(scale, 1),
-      })
-    );
+    logo_ref.current.style.opacity = logo_image_data.rendered ? "1" : "0";
+    logo_ref.current.style.top =
+      Math.max(main_logo_pos.y, nav_img_pos.top) + "px";
+    logo_ref.current.style.position = logo_image_data.rendered
+      ? "fixed"
+      : "unset";
+    logo_ref.current.style.left =
+      Math.min(
+        Math.max(nav_img_pos.left, distance_y * 1.78 + 20),
+        main_logo_pos.left
+      ) + "px";
+    logo_ref.current.style.transform = `scale(${Math.min(scale, 1)})`;
+
+    animation_ref.current = requestAnimationFrame(handleScroll);
   };
+
   return (
     <>
       <div className={styles.background}>
@@ -131,13 +136,7 @@ export default function Home({
           <div className={styles.ideanix_logo_con}>
             <div className={styles.ideanix_logo} ref={main_logo_ref}>
               <Image
-                style={{
-                  opacity: logo_image_data.rendered ? 1 : 0,
-                  top: logo_image_data.top,
-                  position: logo_image_data.rendered ? "fixed" : "unset",
-                  left: logo_image_data.left,
-                  transform: `scale(${logo_image_data.scale})`,
-                }}
+                ref={logo_ref}
                 src="/logo_colored.webp"
                 alt=""
                 width={278.2}
