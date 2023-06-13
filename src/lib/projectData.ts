@@ -73,6 +73,7 @@ export interface ProjectDateInterface {
   time: number;
   items: {
     name: string;
+    des: string;
   }[];
 }
 
@@ -90,15 +91,27 @@ export const project_timeline: ProjectPhraseInterface[] = [
       {
         time: new Date().getTime(),
         items: [
-          { name: "Inspiration Session" },
-          { name: "Design Thinking Session" },
+          {
+            name: "Inspiration Session",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+          {
+            name: "Design Thinking Session",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
         ],
       },
       {
         time: new Date().getTime(),
         items: [
-          { name: "BMC Session" },
-          { name: "Explanation about Competition" },
+          {
+            name: "BMC Session",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+          {
+            name: "Explanation about Competition",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
         ],
       },
     ],
@@ -109,15 +122,30 @@ export const project_timeline: ProjectPhraseInterface[] = [
     dates: [
       {
         time: new Date().getTime(),
-        items: [{ name: "Registration Period Starts" }],
+        items: [
+          {
+            name: "Registration Period Starts",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+        ],
       },
       {
         time: new Date().getTime(),
-        items: [{ name: "Registration Period Ends" }],
+        items: [
+          {
+            name: "Registration Period Ends",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+        ],
       },
       {
         time: new Date().getTime(),
-        items: [{ name: "Ideathon & Designthon Pitching" }],
+        items: [
+          {
+            name: "Ideathon & Designthon Pitching",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+        ],
       },
     ],
   },
@@ -127,11 +155,21 @@ export const project_timeline: ProjectPhraseInterface[] = [
     dates: [
       {
         time: new Date().getTime(),
-        items: [{ name: "Period for preparing for Hackathon" }],
+        items: [
+          {
+            name: "Period for preparing for Hackathon",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+        ],
       },
       {
         time: new Date().getTime(),
-        items: [{ name: "Hackathon & Award Ceremony" }],
+        items: [
+          {
+            name: "Hackathon & Award Ceremony",
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+          },
+        ],
       },
     ],
   },

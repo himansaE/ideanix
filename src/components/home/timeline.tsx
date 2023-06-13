@@ -127,7 +127,7 @@ function DateChip({ data }: { data: ProjectDateInterface }) {
           <Chip
             key={i.name}
             title={i.name}
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            description={i.des}
             date={format_time_for_card(data.time)}
           />
         ))}

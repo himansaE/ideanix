@@ -220,7 +220,7 @@ const Register = () => {
         <Head>
           <title>Register for Ideanix</title>
         </Head>
-        <NavBar current="" logoType={NavLogoType._IDEANIX} />
+        <NavBar current="" logoType={NavLogoType._IDEANIX} page="register" />
         <RegisterPage />
       </ThemeProvider>
     </GoogleReCaptchaProvider>

@@ -28,6 +28,18 @@ const montserrat = Montserrat({
   weight: "400",
   style: ["normal"],
 });
+
+const getNumberBasedOnDeviceWidth = (deviceWidth: number): number =>
+  deviceWidth >= 1500
+    ? 1
+    : deviceWidth >= 600
+    ? 2
+    : deviceWidth >= 500
+    ? 6
+    : deviceWidth >= 300
+    ? 12
+    : 1;
+
 export default function Home({
   setNavLogoType,
 }: {
@@ -55,6 +67,9 @@ export default function Home({
   const logo_image_data = nav_img_pos;
 
   useEffect(() => {
+    if (window) {
+      (window as any).x = getNumberBasedOnDeviceWidth;
+    }
     if (isMounted) {
       handleScroll();
       logo_image_data.rendered = true;
@@ -107,7 +122,10 @@ export default function Home({
 
     const distance_y = main_logo_pos.top - nav_img_pos.top;
     const scale =
-      0.4 + distance_y / Math.abs(main_logo_pos.left - nav_img_pos.left) / 1;
+      0.4 +
+      distance_y /
+        Math.abs(main_logo_pos.left - nav_img_pos.left) /
+        getNumberBasedOnDeviceWidth(window.innerWidth);
 
     logo_ref.current.style.opacity = logo_image_data.rendered ? "1" : "0";
     logo_ref.current.style.top =
