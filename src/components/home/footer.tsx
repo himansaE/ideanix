@@ -1,7 +1,64 @@
 import { cssClasses } from "@/lib/lib";
 import styles from "./footer.module.css";
 import Image from "next/image";
-import { open_sans } from "@/lib/fonts";
+import { montserrat, open_sans } from "@/lib/fonts";
+import Link from "next/link";
+
+const list = [
+  [
+    {
+      name: "Phases",
+      url: "/#phases",
+    },
+    {
+      name: "Road Map",
+      url: "/#timeline",
+    },
+    {
+      name: "Rules and Regulations",
+      url: "/#rules",
+    },
+    {
+      name: "Team Members",
+      url: "/#members",
+    },
+    {
+      name: "About",
+      url: "/#about",
+    },
+    {
+      name: "Contact Us",
+      url: "/#contact",
+    },
+  ],
+  [
+    {
+      name: "Phases",
+      url: "/#phases",
+    },
+    {
+      name: "Road Map",
+      url: "/#timeline",
+    },
+    {
+      name: "Rules and Regulations",
+      url: "/#rules",
+    },
+    {
+      name: "Team Members",
+      url: "/#members",
+    },
+    {
+      name: "About",
+      url: "/#about",
+    },
+    {
+      name: "Contact Us",
+      url: "/#contact",
+    },
+  ],
+];
+
 export default function Footer() {
   return (
     <div className={styles.con}>
@@ -13,6 +70,21 @@ export default function Footer() {
           height={100}
           width={200}
         />
+      </div>
+      <div className={cssClasses(montserrat.className, styles.box2)}>
+        {list.map((i, n) => (
+          <div key={n}>
+            {i.map((ii) => (
+              <div key={ii.name} className={styles.link}>
+                <Link href={ii.name}> {ii.name}</Link>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      <div className={cssClasses(styles.credit, montserrat.className)}>
+        Made with ❤ by
+        <br /> Webmaster Team • Ideanix
       </div>
     </div>
   );

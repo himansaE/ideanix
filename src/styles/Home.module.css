@@ -30,4 +30,9 @@
 }
 .footer_page {
   margin: 20px 0;
+  background-color: black;
+  min-height: auto;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  margin-bottom: 0;
 }

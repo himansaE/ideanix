@@ -11,3 +11,22 @@
 .sponsor_type {
   text-align: center;
 }
+
+.box2 {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.link a {
+  padding: 8px;
+  display: block;
+  transition: color 200ms;
+}
+.link a:hover {
+  color: rgb(209, 209, 209);
+}
+.credit {
+  padding: 20px;
+  text-align: center;
+}
