@@ -127,7 +127,7 @@ function DateChip({ data }: { data: ProjectDateInterface }) {
             .toUpperCase()}
         </div>
         <div className={style.date_date_num}>
-          {new Date(data.time).getDate()}
+          {("0" + new Date(data.time).getDate()).slice(-2)}
         </div>
       </div>
       <div className={style.date_line}></div>
