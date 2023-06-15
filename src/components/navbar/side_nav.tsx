@@ -1,15 +1,9 @@
 import Image from "next/image";
 import styles from "./navbar.module.css";
-import { Inter, Montserrat } from "next/font/google";
 import { cssClasses } from "@/lib/lib";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-const inter = Inter({ subsets: ["latin"], weight: ["500"] });
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal"],
-});
+import { inter, montserrat } from "@/lib/fonts";
 
 interface SideNavProps {
   data: {
@@ -30,9 +24,9 @@ export default function SideNav(props: SideNavProps) {
       <div className={styles.side_nav_con}>
         <div>
           <div className={styles.side_logo_con}>
-            <Image src="/logo-x.webp" alt="" width={53.7} height={80} />
+            <Image src="/logo-x.webp" alt="" width={65} height={80} />
             <div className={cssClasses(inter.className, styles.title)}>
-              Ideanix
+              IDEANIX
             </div>
           </div>
           <div className={cssClasses(montserrat.className, styles.text)}>

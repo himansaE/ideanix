@@ -8,10 +8,9 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import styles from "../components/register/register.module.css";
-import { Montserrat, Open_Sans } from "next/font/google";
 import Head from "next/head";
 import RegisterFormRender from "@/components/register/registerRender";
 import FormBox from "@/components/register/components/formBox";
@@ -19,18 +18,11 @@ import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
+import { montserrat, open_sans } from "@/lib/fonts";
 // import { ReCaptchaProvider, useReCaptcha } from "next-recaptcha-v3";
 
 // #region Fonts
-const open_sans = Open_Sans({
-  weight: ["300", "400"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-});
-const montserrat = Montserrat({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-});
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",

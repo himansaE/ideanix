@@ -6,7 +6,9 @@ import { cssClasses } from "@/lib/lib";
 import StagesPage from "@/components/home/stages_page";
 import Home from "@/components/home/home";
 import Timeline from "@/components/home/timeline";
-import Head from "next/head";
+import Header from "@/components/head";
+import Rules from "@/components/home/rules";
+import Footer from "@/components/home/footer";
 
 // fonts
 
@@ -15,9 +17,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>IDEANIX: Where ideas become reality.</title>
-      </Head>
+      <Header />
       <NavBar current="" logoType={nav_logo_type} fix_size />
       <main className={styles.main}>
         <BlurFilter />
@@ -28,7 +28,7 @@ export default function HomePage() {
           <Home setNavLogoType={setNavLogoType} />
         </section>
         <section
-          id="stages"
+          id="phases"
           className={cssClasses(styles.page, styles.stages_page)}
         >
           <StagesPage />
@@ -38,6 +38,15 @@ export default function HomePage() {
           className={cssClasses(styles.page, styles.timeline_page)}
         >
           <Timeline />
+        </section>
+        <section
+          id="rules"
+          className={cssClasses(styles.page, styles.rules_page)}
+        >
+          <Rules />
+        </section>
+        <section className={cssClasses(styles.page, styles.footer_page)}>
+          <Footer />
         </section>
       </main>
     </>

@@ -1,0 +1,29 @@
+.con {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  display: flex;
+  gap: 27px;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 45px 8px 10px;
+  border: 1px solid #3d4249;
+  border-radius: 30px;
+  background-color: #ffffff0f;
+  color: #d8d8d8;
+  user-select: none;
+  cursor: default;
+}
+.icon {
+  transition: 250ms;
+  display: flex;
+}
+.close {
+  transform: rotate(180deg);
+}

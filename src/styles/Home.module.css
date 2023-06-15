@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   background-color: #b64e601f;
+  min-height: max(100vh, 700px);
 }
 .stages_page {
   padding: 50px 0px;
@@ -23,4 +24,10 @@
 }
 .timeline_page {
   background-color: black;
+}
+.rules_page {
+  padding-top: 50px;
+}
+.footer_page {
+  margin: 20px 0;
 }

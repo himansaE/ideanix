@@ -7,12 +7,12 @@ import React, {
 } from "react";
 import Image from "next/image";
 import BlurSquare from "../anims/blurSquare";
-import { cssClasses, joinObject } from "@/lib/lib";
+import { cssClasses } from "@/lib/lib";
 import { ProjectTitles, project_titles } from "@/lib/projectData";
 import { ActionButton, LinkButton } from "../elements/buttons";
 import { NavLogoType } from "../navbar/navbar";
-import { Inter, Montserrat } from "next/font/google";
 import styles from "./home.module.css";
+import { inter, montserrat } from "@/lib/fonts";
 
 interface LogoImagePosData {
   rendered?: boolean;
@@ -22,12 +22,6 @@ interface LogoImagePosData {
   height: number;
   scale?: number;
 }
-const inter = Inter({ subsets: ["latin"], weight: ["800", "400"] });
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal"],
-});
 
 const getNumberBasedOnDeviceWidth = (deviceWidth: number): number =>
   deviceWidth >= 1500
@@ -185,12 +179,11 @@ export default function Home({
             ))}
           </div>
           <div className={cssClasses(styles.home_disc, montserrat.className)}>
-            Embark on a transformative journey with IdeaniX, where participants
-            are guided by industry experts, unleash their creativity, and turn
-            ideas into reality. Experience enlightening sessions, exhilarating
-            challenges, and thrilling transformations. Expand horizons, foster
-            innovation, and realize your full potential in the realms of IT and
-            entrepreneurship.
+            Join IdeaniX, a one-of-a-kind immersive program designed to guide
+            you on a transformative journey in the realms of IT and
+            entrepreneurship. Led by industry experts, this program empowers
+            participants to tap into their creative potential and turn their
+            ideas into reality.
           </div>
           <div className={styles.home_button_list}>
             <LinkButton text="Register Now" link="/register" />

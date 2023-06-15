@@ -1,11 +1,10 @@
 import { cssClasses } from "@/lib/lib";
-import { Inter, Lato } from "next/font/google";
 import style from "./timeline.module.css";
 import { ProjectDateInterface, project_timeline } from "@/lib/projectData";
 import BallUnderText from "../anims/ballUnderText";
 import { CSSProperties, useState } from "react";
-const inter = Inter({ subsets: ["latin"], weight: ["600", "400"] });
-const lato = Lato({ subsets: ["latin"], weight: "400" });
+import { inter, lato } from "@/lib/fonts";
+import Image from "next/image";
 
 export default function Timeline() {
   const [mouse_pos, setMousePos] = useState({
@@ -45,16 +44,27 @@ export default function Timeline() {
         } as CSSProperties
       }
     >
-      <h1
-        className={cssClasses("section-header", inter.className, style.title)}
-      >
-        Timeline <br /> of the
-        <br /> Project
-      </h1>
+      <h2 className={cssClasses(style.title_mob, inter.className)}>
+        Project Timeline
+      </h2>
+      <div className={style.heading}>
+        <h2
+          className={cssClasses("section-header", inter.className, style.title)}
+        >
+          Timeline <br /> of the <br /> Project
+        </h2>
+        <Image
+          className={style.back_img}
+          src="/images/god.png"
+          alt=""
+          height={746}
+          width={566}
+        />
+      </div>
       <div className={style.back}></div>
       <div className={style.phrases_con}>
         <div className={style.img}>
-          <BallUnderText text="Timeline" />
+          <BallUnderText />
         </div>
         <div className={style.phrases_list}>
           {project_timeline.map((i) => (
@@ -62,8 +72,8 @@ export default function Timeline() {
               <h1 className={cssClasses(style.phrase_head, inter.className)}>
                 Prase {i.phrase} ({i.name})
               </h1>
-              {i.dates.map((d) => (
-                <div key={d.time + Math.random()}>
+              {i.dates.map((d, i) => (
+                <div key={i}>
                   <DateChip data={d} />
                 </div>
               ))}
@@ -95,30 +105,29 @@ function Chip({
   );
 }
 
+const format_time_for_card = (_time: number) => {
+  const today = new Date(_time);
+  const dayOfMonth = String(today.getDate());
+
+  return `${dayOfMonth.padStart(2)} ${today.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  })}`;
+};
+
 function DateChip({ data }: { data: ProjectDateInterface }) {
-  const format_time_for_card = (_time: number) => {
-    const today = new Date(_time);
-    const dayOfMonth = String(today.getDate());
-    const time = today.toLocaleTimeString("en-US", {
-      hour12: true,
-      timeStyle: "short",
-    });
-    return `${dayOfMonth.padStart(2)} ${today.toLocaleDateString("en-US", {
-      weekday: "short",
-    })}, ${time}`;
-  };
   return (
     <div className={cssClasses(style.date_con, lato.className)}>
       <div className={style.date_date}>
-        <div className={style.date_date_num}>
-          {new Date(data.time).getDate()}
-        </div>
         <div className={style.date_date_name}>
           {new Date(data.time)
             .toLocaleDateString("en-US", {
-              weekday: "short",
+              month: "short",
             })
             .toUpperCase()}
+        </div>
+        <div className={style.date_date_num}>
+          {new Date(data.time).getDate()}
         </div>
       </div>
       <div className={style.date_line}></div>

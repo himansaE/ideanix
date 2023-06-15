@@ -82,35 +82,39 @@ export interface ProjectPhraseInterface {
   name: string;
   dates: ProjectDateInterface[];
 }
-
 export const project_timeline: ProjectPhraseInterface[] = [
   {
     phrase: 1,
     name: "Guidance Sessions",
     dates: [
       {
-        time: new Date().getTime(),
+        time: new Date("2023-06-18").getTime(),
         items: [
           {
             name: "Inspiration Session",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            des: "Session for brainstorming, inspiration, and planning for upcoming events.",
           },
           {
             name: "Design Thinking Session",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            des: "Workshop on design thinking principles, user-centered innovation, problem-solving.",
           },
         ],
       },
       {
-        time: new Date().getTime(),
+        time: new Date("2023-06-28").getTime(),
         items: [
           {
-            name: "BMC Session",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "Registration Period Starts",
+            des: "Express your interest in participating in the event.",
           },
+        ],
+      },
+      {
+        time: new Date("2023-07-05").getTime(),
+        items: [
           {
-            name: "Explanation about Competition",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "Registration Period Ends",
+            des: "Registration deadline for participants to confirm intent to participate.",
           },
         ],
       },
@@ -121,29 +125,38 @@ export const project_timeline: ProjectPhraseInterface[] = [
     name: "Ideathon & Designathon",
     dates: [
       {
-        time: new Date().getTime(),
+        time: new Date("2023-07-10").getTime(),
         items: [
           {
-            name: "Registration Period Starts",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "Announce Top 20 teams",
+            des: "Reveal top 20 teams selected for advancement in the competition.",
           },
         ],
       },
       {
-        time: new Date().getTime(),
+        time: new Date("2023-07-11").getTime(),
         items: [
           {
-            name: "Registration Period Ends",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "BMC session",
+            des: "Explore Business Model Canvas, a strategic management tool for defining and analyzing business models.",
           },
         ],
       },
       {
-        time: new Date().getTime(),
+        time: new Date("2023-07-14").getTime(),
         items: [
           {
-            name: "Ideathon & Designthon Pitching",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "Ideathon & Designathon Pitching",
+            des: "Teams present ideas to judges, showcasing potential and value.",
+          },
+        ],
+      },
+      {
+        time: new Date("2023-07-15").getTime(),
+        items: [
+          {
+            name: "Top 10 teams Announce",
+            des: "The top 10 teams or participants are announced, having advanced further in the competition.",
           },
         ],
       },
@@ -154,20 +167,38 @@ export const project_timeline: ProjectPhraseInterface[] = [
     name: "Hackathon",
     dates: [
       {
-        time: new Date().getTime(),
+        time: new Date("2023-07-15").getTime(),
         items: [
           {
-            name: "Period for preparing for Hackathon",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "Prototype submission start",
+            des: "Teams have designated time to develop and submit prototypes.",
           },
         ],
       },
       {
-        time: new Date().getTime(),
+        time: new Date("2023-08-11").getTime(),
         items: [
           {
-            name: "Hackathon & Award Ceremony",
-            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            name: "Prototype submission deadline",
+            des: "The final day for teams to submit their completed prototypes or working models.",
+          },
+        ],
+      },
+      {
+        time: new Date("2023-08-11").getTime(),
+        items: [
+          {
+            name: "Hackathon pitching",
+            des: "The hackathon phase commences, allowing teams to collaborate, code, and build their solutions within a specified time frame.",
+          },
+        ],
+      },
+      {
+        time: new Date("2023-08-15").getTime(),
+        items: [
+          {
+            name: "Awards ceremony",
+            des: "Unveiling Winners, Commending Achievements!",
           },
         ],
       },

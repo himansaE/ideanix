@@ -1,46 +1,15 @@
 import { project_stages } from "@/lib/projectData";
 import styles from "./stages_page.module.css";
-import { Inter, Lato, Montserrat } from "next/font/google";
 import { cssClasses } from "@/lib/lib";
 import { projectStageInterface } from "@/lib/projectData";
 import Image from "next/image";
-// import { useEffect, useRef } from "react";
+import { inter, lato, montserrat } from "@/lib/fonts";
 
-const inter = Inter({ subsets: ["latin"], weight: ["600", "400"] });
-const lato = Lato({ subsets: ["latin"], weight: "700" });
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal"],
-});
 export default function StagesPage() {
-  // const stage_cards_list = useRef<HTMLDivElement>(null);
-  // const scroll_helper = useRef<HTMLDivElement>(null);
-
-  // const resize_func = () => {
-  //   if (!stage_cards_list.current) return;
-  //   if (!scroll_helper.current) return;
-  //   scroll_helper.current.style.height = `${
-  //     stage_cards_list.current.scrollWidth -
-  //     stage_cards_list.current.offsetHeight
-  //   }px`;
-  // };
-
-  // const scroll_func = () => {};
-
-  // useEffect(() => {
-  //   resize_func();
-  //   window.addEventListener("resize", resize_func);
-  //   window.addEventListener("scroll", scroll_func);
-  //   return () => {
-  //     window.removeEventListener("resize", resize_func);
-  //     window.removeEventListener("scroll", scroll_func);
-  //   };
-  // }, []);
   return (
     <>
       <h2 className={cssClasses("section-header", inter.className)}>
-        Phases Of IdeaNiX
+        Phases Of IDEANIX
       </h2>
       <p className={cssClasses(styles.page_des, montserrat.className)}>
         The Phases of IdeaniX are carefully designed to provide a comprehensive

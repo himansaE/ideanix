@@ -1,35 +1,41 @@
 // "use client";
 import style from "./navbar.module.css";
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import { cssClasses } from "../../lib/lib";
 import Link from "next/link";
 import SideNav from "./side_nav";
 import { LinkButton } from "../elements/buttons";
 import { useState } from "react";
 import XIcon from "../anims/x_icon";
-
-const ft_montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal"],
-});
+import { montserrat } from "@/lib/fonts";
 
 export const nav_items: {
   name: string;
   url: string;
 }[] = [
   {
-    name: "Stages",
-    url: "/#stages",
+    name: "Phases",
+    url: "/#phases",
+  },
+  {
+    name: "Road Map",
+    url: "/#timeline",
   },
   {
     name: "Rules",
     url: "/#rules",
   },
   {
-    name: "Road Map",
-    url: "/#timeline",
+    name: "Team Members",
+    url: "/#members",
+  },
+  {
+    name: "About",
+    url: "/#about",
+  },
+  {
+    name: "Contact",
+    url: "/#contact",
   },
 ];
 
@@ -92,7 +98,7 @@ export default function NavBar({
               key={i.name}
               href={i.url}
               className={cssClasses(
-                ft_montserrat.className,
+                montserrat.className,
                 style.item,
                 i.url == current ? style.current : ""
               )}
