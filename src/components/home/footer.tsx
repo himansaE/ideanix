@@ -76,7 +76,7 @@ export default function Footer() {
           <div key={n}>
             {i.map((ii) => (
               <div key={ii.name} className={styles.link}>
-                <Link href={ii.name}> {ii.name}</Link>
+                <Link href={ii.url}> {ii.name}</Link>
               </div>
             ))}
           </div>

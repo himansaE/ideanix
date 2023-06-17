@@ -70,7 +70,7 @@ export default function Timeline() {
           {project_timeline.map((i) => (
             <div key={i.phrase} className={style.phrase}>
               <h1 className={cssClasses(style.phrase_head, inter.className)}>
-                Prase {i.phrase} ({i.name})
+                Phase {i.phrase} ({i.name})
               </h1>
               {i.dates.map((d, i) => (
                 <div key={i}>

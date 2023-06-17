@@ -16,13 +16,13 @@ export interface projectStageInterface {
 export const project_titles = [
   {
     enum: ProjectTitles.ideathon,
-    heading: "Ideathon. ",
+    heading: "Guidance. ",
     start_color: "#00dfd8",
     end_color: "#007cf0",
   },
   {
     enum: ProjectTitles.designathon,
-    heading: "Designathon. ",
+    heading: "Ideathon. ",
     start_color: "#7928ca",
     end_color: "#ff0080",
   },
@@ -44,7 +44,7 @@ export const project_stages: projectStageInterface[] = [
     image: "/images/guidance.webp",
   },
   {
-    name: "Ideathon & Designathon",
+    name: "Ideathon",
     tagline:
       "Unleashing creativity and problem-solving skills to shape innovative ideas and refine designs.",
     description:
@@ -88,7 +88,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
     name: "Guidance Sessions",
     dates: [
       {
-        time: new Date("2023-06-18").getTime(),
+        time: new Date("2023-06-28").getTime(),
         items: [
           {
             name: "Inspiration Session",
@@ -98,11 +98,6 @@ export const project_timeline: ProjectPhraseInterface[] = [
             name: "Design Thinking Session",
             des: "Workshop on design thinking principles, user-centered innovation, problem-solving.",
           },
-        ],
-      },
-      {
-        time: new Date("2023-06-28").getTime(),
-        items: [
           {
             name: "Registration Period Starts",
             des: "Express your interest in participating in the event.",
@@ -122,7 +117,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
   },
   {
     phrase: 2,
-    name: "Ideathon & Designathon",
+    name: "Ideathon",
     dates: [
       {
         time: new Date("2023-07-10").getTime(),
@@ -184,18 +179,14 @@ export const project_timeline: ProjectPhraseInterface[] = [
           },
         ],
       },
+
       {
-        time: new Date("2023-08-11").getTime(),
+        time: new Date("2023-08-15").getTime(),
         items: [
           {
             name: "Hackathon pitching",
             des: "The hackathon phase commences, allowing teams to collaborate, code, and build their solutions within a specified time frame.",
           },
-        ],
-      },
-      {
-        time: new Date("2023-08-15").getTime(),
-        items: [
           {
             name: "Awards ceremony",
             des: "Unveiling Winners, Commending Achievements!",
