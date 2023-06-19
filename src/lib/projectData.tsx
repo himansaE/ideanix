@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+import { ReactNode } from "react";
+
 //TODO:: Change names
 export enum ProjectTitles {
   ideathon,
@@ -73,7 +76,7 @@ export interface ProjectDateInterface {
   time: number;
   items: {
     name: string;
-    des: string;
+    des: ReactNode;
   }[];
 }
 
@@ -92,14 +95,14 @@ export const project_timeline: ProjectPhraseInterface[] = [
         items: [
           {
             name: "Inspiration Session",
-            des: "Session for brainstorming, inspiration, and planning for upcoming events.",
+            des: "A Session for brainstorming, inspiration, and planning for upcoming events.",
           },
           {
             name: "Design Thinking Session",
-            des: "Workshop on design thinking principles, user-centered innovation, problem-solving.",
+            des: "Workshop on design thinking principles, user-centered innovation and problem-solving.",
           },
           {
-            name: "Registration Period Starts",
+            name: "Registration Start",
             des: "Express your interest in participating in the event.",
           },
         ],
@@ -108,7 +111,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-07-05").getTime(),
         items: [
           {
-            name: "Registration Period Ends",
+            name: "Registration End",
             des: "Registration deadline for participants to confirm intent to participate.",
           },
         ],
@@ -124,7 +127,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         items: [
           {
             name: "Announce Top 20 teams",
-            des: "Reveal top 20 teams selected for advancement in the competition.",
+            des: "Reveal the top 20 teams selected for advancement in the competition.",
           },
         ],
       },
@@ -133,7 +136,12 @@ export const project_timeline: ProjectPhraseInterface[] = [
         items: [
           {
             name: "BMC session",
-            des: "Explore Business Model Canvas, a strategic management tool for defining and analyzing business models.",
+            des: (
+              <>
+                Explore<b> Business Model Canvas</b>, a strategic management
+                tool for defining and analyzing business models.
+              </>
+            ),
           },
         ],
       },
@@ -141,7 +149,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-07-14").getTime(),
         items: [
           {
-            name: "Ideathon & Designathon Pitching",
+            name: "Semi Final",
             des: "Teams present ideas to judges, showcasing potential and value.",
           },
         ],
@@ -150,8 +158,8 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-07-15").getTime(),
         items: [
           {
-            name: "Top 10 teams Announce",
-            des: "The top 10 teams or participants are announced, having advanced further in the competition.",
+            name: "Announce Top 10 teams",
+            des: "The top 10 teams or participants, who have successfully progressed to the next stage are announced.",
           },
         ],
       },
@@ -184,7 +192,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-08-15").getTime(),
         items: [
           {
-            name: "Hackathon pitching",
+            name: "Final",
             des: "The hackathon phase commences, allowing teams to collaborate, code, and build their solutions within a specified time frame.",
           },
           {

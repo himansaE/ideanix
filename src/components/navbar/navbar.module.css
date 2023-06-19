@@ -59,9 +59,7 @@
 .item.current > div {
   box-shadow: none;
 }
-.fake {
-  height: 28px;
-}
+
 .side_nav {
   position: fixed;
   height: 100%;

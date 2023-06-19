@@ -2,7 +2,7 @@ import { cssClasses } from "@/lib/lib";
 import style from "./timeline.module.css";
 import { ProjectDateInterface, project_timeline } from "@/lib/projectData";
 import BallUnderText from "../anims/ballUnderText";
-import { CSSProperties, useState } from "react";
+import { CSSProperties, ReactNode, useState } from "react";
 import { inter, lato } from "@/lib/fonts";
 import Image from "next/image";
 
@@ -62,10 +62,9 @@ export default function Timeline() {
         />
       </div>
       <div className={style.back}></div>
+      <BallUnderText />
       <div className={style.phrases_con}>
-        <div className={style.img}>
-          <BallUnderText />
-        </div>
+        <div className={style.img}></div>
         <div className={style.phrases_list}>
           {project_timeline.map((i) => (
             <div key={i.phrase} className={style.phrase}>
@@ -91,7 +90,7 @@ function Chip({
   date,
 }: {
   title: string;
-  description: string;
+  description: ReactNode;
   date: string;
 }) {
   return (

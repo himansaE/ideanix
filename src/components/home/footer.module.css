@@ -29,4 +29,10 @@
 .credit {
   padding: 20px;
   text-align: center;
+  font-size: 0.8em;
+  color: #c2c2c2;
+}
+.credit a {
+  font-weight: bold;
+  color: white;
 }

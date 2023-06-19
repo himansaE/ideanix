@@ -84,10 +84,11 @@ export default function NavBar({
                     ? "block"
                     : "none",
               }}
-              src="/ieee_logo.webp"
+              src="/ieee_cs_logo.png"
               alt=""
               height={40}
-              width={83}
+              width={91.3}
+              unoptimized
             />
           </div>
         </Link>

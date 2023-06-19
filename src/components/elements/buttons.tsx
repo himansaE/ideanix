@@ -1,7 +1,7 @@
 import styles from "./buttons.module.css";
 import { cssClasses } from "@/lib/lib";
 import Link from "next/link";
-import { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { inter } from "@/lib/fonts";
 interface ActionButtonProps {
   text: string;
@@ -48,3 +48,22 @@ export function LinkButton(props: LinkButtonProps) {
     </div>
   );
 }
+
+export const RoundIconButton = (props: {
+  href: string;
+  d: string;
+  title?: string;
+}) => (
+  <div className={styles.icon_btn} title={props.title}>
+    <Link href={props.href} rel="noopener noreferrer" target="_blank">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22px"
+        height="22px"
+        viewBox="0 0 24 24"
+      >
+        <path fill="currentColor" d={props.d}></path>
+      </svg>
+    </Link>
+  </div>
+);

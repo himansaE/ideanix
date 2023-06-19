@@ -21,3 +21,13 @@
   color: white;
   background-color: black;
 }
+.icon_btn {
+  display: flex;
+}
+.icon_btn a {
+  display: flex;
+  padding: 10px;
+  border-radius: 18px;
+  /* border-radius: 50%; */
+  background-color: #17172f;
+}

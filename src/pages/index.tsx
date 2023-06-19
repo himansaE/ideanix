@@ -9,6 +9,7 @@ import Timeline from "@/components/home/timeline";
 import Header from "@/components/head";
 import Rules from "@/components/home/rules";
 import Footer from "@/components/home/footer";
+import Contact from "@/components/home/contact";
 
 // fonts
 
@@ -44,6 +45,9 @@ export default function HomePage() {
           className={cssClasses(styles.page, styles.rules_page)}
         >
           <Rules />
+        </section>
+        <section className={cssClasses(styles.page, styles.contact_page)}>
+          <Contact />
         </section>
         <section className={cssClasses(styles.page, styles.footer_page)}>
           <Footer />

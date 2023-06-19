@@ -3,20 +3,21 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .page {
-  min-height: 100vh;
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 .home_page {
   display: flex;
   align-items: center;
   background-color: #b64e601f;
   min-height: max(100vh, 700px);
+  padding-top: 45px;
+  overflow: hidden;
 }
 .stages_page {
   padding: 50px 0px;
@@ -35,4 +36,7 @@
   padding-bottom: 30px;
   padding-top: 50px;
   margin-bottom: 0;
+}
+.contact_page {
+  clip-path: inset(0 0 0 0);
 }

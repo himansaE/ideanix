@@ -64,7 +64,7 @@ export default function Footer() {
     <div className={styles.con}>
       <div className={styles.sponsors}>
         <Sponsors
-          type="Title sponsor"
+          type="Powered by"
           image="/images/aqcellor logo.svg"
           name="Aqcellor"
           height={100}
@@ -83,8 +83,11 @@ export default function Footer() {
         ))}
       </div>
       <div className={cssClasses(styles.credit, montserrat.className)}>
-        Made with ❤ by
-        <br /> Webmaster Team • Ideanix
+        Copyright © IdeaniX Gen 01 <b> • </b> IEEE CS Chapter of SLTC
+        {/* <br /> Designed & developed by{" "}
+        <Link href={"https://www.linkedin.com/in/himanse/"}>
+          Himansa Wickramasinghe
+        </Link> */}
       </div>
     </div>
   );
