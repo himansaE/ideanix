@@ -41,9 +41,12 @@
   margin-top: 10px;
   opacity: 0.8;
   transition: opacity 150ms;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
 }
 .item.current {
   opacity: 1;
+  border-bottom: 1px solid #ffffff87;
 }
 .item > div {
   transition: color 250ms, box-shadow 250ms;

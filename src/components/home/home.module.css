@@ -107,6 +107,23 @@
   background-repeat: no-repeat;
 }
 
+.dialog_title {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dialog_close {
+  padding: 10px;
+  background-color: rgb(37, 37, 37);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 250ms;
+}
+.dialog_close:hover {
+  background-color: rgb(21, 21, 21);
+}
 @media screen and (max-width: 450px) {
   .home_button_list {
     flex-direction: column;

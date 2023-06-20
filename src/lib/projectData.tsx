@@ -74,6 +74,7 @@ export const project_stages: projectStageInterface[] = [
 
 export interface ProjectDateInterface {
   time: number;
+  hide_date?: boolean;
   items: {
     name: string;
     des: ReactNode;
@@ -101,6 +102,12 @@ export const project_timeline: ProjectPhraseInterface[] = [
             name: "Design Thinking Session",
             des: "Workshop on design thinking principles, user-centered innovation and problem-solving.",
           },
+        ],
+      },
+      {
+        time: new Date("2023-06-28").getTime(),
+        hide_date: true,
+        items: [
           {
             name: "Registration Start",
             des: "Express your interest in participating in the event.",
@@ -192,7 +199,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-08-15").getTime(),
         items: [
           {
-            name: "Final",
+            name: "Grand Final",
             des: "The hackathon phase commences, allowing teams to collaborate, code, and build their solutions within a specified time frame.",
           },
           {

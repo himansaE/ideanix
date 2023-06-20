@@ -38,6 +38,11 @@
   flex-direction: column;
   align-items: center;
 }
+.date_hidden {
+  opacity: 0;
+  user-select: none;
+  visibility: hidden;
+}
 .date_line {
   width: 2px;
   border-left: 2px dashed #3b3a3a;

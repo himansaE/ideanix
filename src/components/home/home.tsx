@@ -9,10 +9,11 @@ import Image from "next/image";
 import BlurSquare from "../anims/blurSquare";
 import { cssClasses } from "@/lib/lib";
 import { ProjectTitles, project_titles } from "@/lib/projectData";
-import { ActionButton, LinkButton } from "../elements/buttons";
+import { ActionButton, LinkButton, RoundIconButton } from "../elements/buttons";
 import { NavLogoType } from "../navbar/navbar";
 import styles from "./home.module.css";
-import { inter, montserrat } from "@/lib/fonts";
+import { inter, montserrat, open_sans } from "@/lib/fonts";
+import { Dialog, DialogTitle } from "@mui/material";
 
 interface LogoImagePosData {
   rendered?: boolean;
@@ -43,8 +44,8 @@ export default function Home({
     ProjectTitles.ideathon
   );
 
-  // eslint-disable-next-line no-unused-vars
   const [isMounted] = useState(true);
+  const [show_dialog, setShowDialog] = useState(false);
 
   // use for logo shrinking
   const main_logo_ref = useRef<HTMLDivElement>(null);
@@ -61,9 +62,6 @@ export default function Home({
   const logo_image_data = nav_img_pos;
 
   useEffect(() => {
-    if (window) {
-      (window as any).x = getNumberBasedOnDeviceWidth;
-    }
     if (isMounted) {
       handleScroll();
       logo_image_data.rendered = true;
@@ -188,10 +186,43 @@ export default function Home({
           </div>
           <div className={styles.home_button_list}>
             <LinkButton text="Register Now" link="/register" />
-            <ActionButton text="Watch Intro " invert />
+            <ActionButton
+              text="Watch Intro "
+              invert
+              action={() => setShowDialog(true)}
+            />
           </div>
         </div>
       </div>
+      <Dialog
+        open={show_dialog}
+        fullScreen
+        onClose={() => setShowDialog(false)}
+        onKeyUp={(e) => {
+          if (e.key === "Escape") setShowDialog(false);
+        }}
+      >
+        <DialogTitle
+          className={cssClasses(open_sans.className, styles.dialog_title)}
+        >
+          Intro Video
+          <div
+            className={styles.dialog_close}
+            title="close"
+            onClick={() => setShowDialog(false)}
+          >
+            <RoundIconButton d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"></RoundIconButton>
+          </div>
+        </DialogTitle>
+        <iframe
+          src="https://drive.google.com/file/d/1i4NXcaGodxKvgtebzyybzErBca3_CfZE/preview"
+          title="Intro video"
+          allowFullScreen
+          loading="lazy"
+          style={{ height: "100%", width: "100%" }}
+          allow="autoplay ; "
+        />
+      </Dialog>
     </>
   );
 }

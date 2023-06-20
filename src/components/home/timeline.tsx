@@ -45,13 +45,13 @@ export default function Timeline() {
       }
     >
       <h2 className={cssClasses(style.title_mob, inter.className)}>
-        Project Timeline
+        Project Roadmap
       </h2>
       <div className={style.heading}>
         <h2
           className={cssClasses("section-header", inter.className, style.title)}
         >
-          Timeline <br /> of the <br /> Project
+          Roadmap <br /> of the <br /> Project
         </h2>
         <Image
           className={style.back_img}
@@ -117,7 +117,12 @@ const format_time_for_card = (_time: number) => {
 function DateChip({ data }: { data: ProjectDateInterface }) {
   return (
     <div className={cssClasses(style.date_con, lato.className)}>
-      <div className={style.date_date}>
+      <div
+        className={cssClasses(
+          style.date_date,
+          data.hide_date ? style.date_hidden : ""
+        )}
+      >
         <div className={style.date_date_name}>
           {new Date(data.time)
             .toLocaleDateString("en-US", {

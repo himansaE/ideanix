@@ -14,18 +14,18 @@ const list = [
       name: "Road Map",
       url: "/#timeline",
     },
-    {
-      name: "Rules and Regulations",
-      url: "/#rules",
-    },
-    {
-      name: "Team Members",
-      url: "/#members",
-    },
-    {
-      name: "About",
-      url: "/#about",
-    },
+    // {
+    //   name: "Rules and Regulations",
+    //   url: "/#rules",
+    // },
+    // {
+    //   name: "Team Members",
+    //   url: "/#members",
+    // },
+    // {
+    //   name: "About",
+    //   url: "/#about",
+    // },
     {
       name: "Contact Us",
       url: "/#contact",
@@ -33,29 +33,29 @@ const list = [
   ],
   [
     {
-      name: "Phases",
-      url: "/#phases",
+      name: "Register",
+      url: "/register",
     },
-    {
-      name: "Road Map",
-      url: "/#timeline",
-    },
-    {
-      name: "Rules and Regulations",
-      url: "/#rules",
-    },
-    {
-      name: "Team Members",
-      url: "/#members",
-    },
-    {
-      name: "About",
-      url: "/#about",
-    },
-    {
-      name: "Contact Us",
-      url: "/#contact",
-    },
+    // {
+    //   name: "Road Map",
+    //   url: "/#timeline",
+    // },
+    // {
+    //   name: "Rules and Regulations",
+    //   url: "/#rules",
+    // },
+    // {
+    //   name: "Team Members",
+    //   url: "/#members",
+    // },
+    // {
+    //   name: "About",
+    //   url: "/#about",
+    // },
+    // {
+    //   name: "Contact Us",
+    //   url: "/#contact",
+    // },
   ],
 ];
 

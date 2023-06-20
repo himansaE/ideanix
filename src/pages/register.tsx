@@ -19,7 +19,8 @@ import {
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import { montserrat, open_sans } from "@/lib/fonts";
-// import { ReCaptchaProvider, useReCaptcha } from "next-recaptcha-v3";
+import Router from "next/router";
+import { NextPageContext } from "next/types";
 
 // #region Fonts
 
@@ -212,10 +213,25 @@ const Register = () => {
         <Head>
           <title>Register for Ideanix</title>
         </Head>
-        <NavBar current="" logoType={NavLogoType._IDEANIX} page="register" />
+        <NavBar current="" logoType={NavLogoType._IDEANIX} hideReg />
         <RegisterPage />
       </ThemeProvider>
     </GoogleReCaptchaProvider>
   );
 };
+
+export async function getServerSideProps(context: NextPageContext) {
+  if (context.res) {
+    // Server-side rendering
+    context.res.writeHead(302, {
+      Location:
+        "https://docs.google.com/forms/d/e/1FAIpQLSdmu0eLesyZPcC1SDqcU_a9Jv4ICyiTBhnOa4Dmw5OtqFjw_Q/viewform",
+    });
+    context.res.end();
+  }
+
+  return {
+    props: {},
+  };
+}
 export default Register;

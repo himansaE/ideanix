@@ -50,12 +50,24 @@ export function LinkButton(props: LinkButtonProps) {
 }
 
 export const RoundIconButton = (props: {
-  href: string;
+  href?: string;
+  onClick?: () => void;
   d: string;
   title?: string;
 }) => (
-  <div className={styles.icon_btn} title={props.title}>
-    <Link href={props.href} rel="noopener noreferrer" target="_blank">
+  <div className={styles.icon_btn} title={props.title} onClick={props.onClick}>
+    {props.href ? (
+      <Link href={props.href} rel="noopener noreferrer" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22px"
+          height="22px"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d={props.d}></path>
+        </svg>
+      </Link>
+    ) : (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="22px"
@@ -64,6 +76,6 @@ export const RoundIconButton = (props: {
       >
         <path fill="currentColor" d={props.d}></path>
       </svg>
-    </Link>
+    )}
   </div>
 );

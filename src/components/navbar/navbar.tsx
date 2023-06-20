@@ -21,18 +21,18 @@ export const nav_items: {
     name: "Road Map",
     url: "/#timeline",
   },
-  {
-    name: "Rules",
-    url: "/#rules",
-  },
-  {
-    name: "Team Members",
-    url: "/#members",
-  },
-  {
-    name: "About",
-    url: "/#about",
-  },
+  // {
+  //   name: "Rules",
+  //   url: "/#rules",
+  // },
+  // {
+  //   name: "Team Members",
+  //   url: "/#members",
+  // },
+  // {
+  //   name: "About",
+  //   url: "/#about",
+  // },
   {
     name: "Contact",
     url: "/#contact",
@@ -43,7 +43,7 @@ interface NavbarProps {
   current?: string;
   logoType?: NavLogoType;
   fix_size?: boolean;
-  page?: string;
+  hideReg: boolean;
 }
 export enum NavLogoType {
   _IDEANIX,
@@ -52,9 +52,9 @@ export enum NavLogoType {
 }
 export default function NavBar({
   current = undefined,
+  hideReg = true,
   logoType = NavLogoType._IDEANIX,
   fix_size = false,
-  page,
 }: NavbarProps) {
   const [side_nav_open, setSideNavOpen] = useState(false);
   return (
@@ -110,11 +110,8 @@ export default function NavBar({
           ))}
         </div>
         <div className={style.end_list}>
-          {page !== "register" ? (
-            <LinkButton text="Register" link="/register" />
-          ) : (
-            <></>
-          )}
+          {!hideReg ? <LinkButton text="Register" link="/register" /> : <></>}
+
           <div
             className={style.button}
             onClick={() => setSideNavOpen((i) => !i)}
