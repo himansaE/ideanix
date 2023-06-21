@@ -14,6 +14,10 @@ export const nav_items: {
   url: string;
 }[] = [
   {
+    name: "Overview",
+    url: "/#overview",
+  },
+  {
     name: "Phases",
     url: "/#phases",
   },

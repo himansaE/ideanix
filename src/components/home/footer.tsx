@@ -3,34 +3,10 @@ import styles from "./footer.module.css";
 import Image from "next/image";
 import { montserrat, open_sans } from "@/lib/fonts";
 import Link from "next/link";
+import { nav_items } from "../navbar/navbar";
 
 const list = [
-  [
-    {
-      name: "Phases",
-      url: "/#phases",
-    },
-    {
-      name: "Road Map",
-      url: "/#timeline",
-    },
-    // {
-    //   name: "Rules and Regulations",
-    //   url: "/#rules",
-    // },
-    // {
-    //   name: "Team Members",
-    //   url: "/#members",
-    // },
-    // {
-    //   name: "About",
-    //   url: "/#about",
-    // },
-    {
-      name: "Contact Us",
-      url: "/#contact",
-    },
-  ],
+  nav_items,
   [
     {
       name: "Register",

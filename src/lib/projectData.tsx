@@ -41,7 +41,7 @@ export const project_stages: projectStageInterface[] = [
   {
     name: "Guidance Sessions",
     tagline:
-      "Participants will learn about the Tech industry, how to identify problems and provide solutions, and what it means to be an entrepreneur. The program is a one day physical session and it is divided into 2 main sessions: Inspiration and Design Thinking",
+      "Participants will learn how to identify problems and provide solutions, and what it means to be an entrepreneur. The program is a one day physical session and it is divided into 2 main sessions: Inspiration and Design Thinking.",
     description:
       "Equip students with the knowledge and skills needed to succeed in the IT and entrepreneurship fields. Through a series of inspiring sessions, participants explore various career paths within the industry. They learn the fundamentals of design thinking (DT) and business management canvas (BMC) to identify problems, generate innovative solutions, and develop their ideas into startup-level concepts.",
     image: "/images/guidance.webp",
@@ -57,7 +57,7 @@ export const project_stages: projectStageInterface[] = [
   {
     name: "Hackathon",
     tagline:
-      "Teams will have two weeks to develop their ideas into fully functional products. The teams will then present their products to a panel of judges at the grand finale and the top 03 teams will receive a cash prize.",
+      "Teams will have two weeks to develop their ideas into fully functional products. The teams will then present their products to a panel of judges at the grand finale and the top 03 teams will receive cash prizes.",
     description:
       "In the final phase, participants transform their ideas into tangible outcomes. Through an intensive hackathon, they develop functional prototypes or final products, overcoming technical challenges and incorporating cutting-edge technologies. Their final outputs are presented to the panel of judges, who assess the innovation, technical implementation, and viability of their solutions.",
     image: "/images/hackathon.webp",

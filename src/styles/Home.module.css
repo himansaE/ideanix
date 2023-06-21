@@ -21,7 +21,6 @@
   overflow: hidden;
 }
 .overview_page {
-  padding: 50px 0px;
   background-color: black;
   clip-path: inset(0 0 0 0);
 }
@@ -45,4 +44,22 @@
 }
 .contact_page {
   clip-path: inset(0 0 0 0);
+}
+
+.up {
+  position: fixed;
+  bottom: 30px;
+  right: 49px;
+  display: flex;
+  padding: 10px;
+  background-color: #0000008a;
+  backdrop-filter: blur(4px);
+  z-index: 12321321;
+  border-radius: 50%;
+  color: #bdbdbd;
+  border: 1px solid #ffffff2e;
+  transition: 300ms;
+}
+.up.hidden {
+  right: -50px;
 }

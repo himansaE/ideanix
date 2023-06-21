@@ -30,7 +30,7 @@ export default function SideNav(props: SideNavProps) {
             </div>
           </div>
           <div className={cssClasses(montserrat.className, styles.text)}>
-            Where ideas become reality.
+            Where imagination meets reality
           </div>
         </div>
         <div className={styles.link_boxes}>
