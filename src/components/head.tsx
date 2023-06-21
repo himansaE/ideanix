@@ -18,7 +18,8 @@ export default function Header() {
         name="og:description"
         content="The IEEE Computer Society Student Branch Chapter of SLTC is proud to present for the first time in its history - Ideanix, a project aimed at empowering and inspiring the student community with innovative ideas."
       />
-      <meta name="og:image" content="/logo-x.webp" />
+      <meta name="og:image" content="/logo-x.png" />
+      <meta property="og:image:type" content="image/png" />
       <link rel="icon" href="/favicon-96x96.png" type="image/png" />
       <link
         rel="icon"
