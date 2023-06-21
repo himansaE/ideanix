@@ -41,7 +41,7 @@ export const project_stages: projectStageInterface[] = [
   {
     name: "Guidance Sessions",
     tagline:
-      "Participants will learn how to identify problems and provide solutions, and what it means to be an entrepreneur. The program is a one day physical session and it is divided into 2 main sessions: Inspiration and Design Thinking.",
+      "Participants will learn about the Tech industry, how to identify problems and provide solutions, and what it means to be an entrepreneur. The program is a one-day physical session that is divided into 2 main sessions: Inspiration and Design Thinking.",
     description:
       "Equip students with the knowledge and skills needed to succeed in the IT and entrepreneurship fields. Through a series of inspiring sessions, participants explore various career paths within the industry. They learn the fundamentals of design thinking (DT) and business management canvas (BMC) to identify problems, generate innovative solutions, and develop their ideas into startup-level concepts.",
     image: "/images/guidance.webp",
@@ -96,7 +96,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         items: [
           {
             name: "Inspiration Session",
-            des: "A Session for brainstorming, inspiration, and planning for upcoming events.",
+            des: "A session for brainstorming, inspiration, and planning for upcoming events.",
           },
           {
             name: "Design Thinking Session",
