@@ -106,7 +106,6 @@ export const project_timeline: ProjectPhraseInterface[] = [
       },
       {
         time: new Date("2023-06-28").getTime(),
-        hide_date: true,
         items: [
           {
             name: "Registration Start",
