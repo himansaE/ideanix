@@ -22,7 +22,7 @@
 }
 .overview_page {
   padding: 50px 0px;
-  background-color: #000000db;
+  background-color: black;
   clip-path: inset(0 0 0 0);
 }
 .stages_page {
