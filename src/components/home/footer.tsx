@@ -38,7 +38,7 @@ const list = [
 export default function Footer() {
   return (
     <div className={styles.con}>
-      <div className={styles.sponsors}>
+      <div className={styles.sponsors} style={{ display: "none" }}>
         <Sponsors
           type="Powered by"
           image="/images/aqcellor logo.svg"
