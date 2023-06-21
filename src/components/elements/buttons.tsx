@@ -57,7 +57,12 @@ export const RoundIconButton = (props: {
 }) => (
   <div className={styles.icon_btn} title={props.title} onClick={props.onClick}>
     {props.href ? (
-      <Link href={props.href} rel="noopener noreferrer" target="_blank">
+      <Link
+        href={props.href}
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label={props.title}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22px"

@@ -48,7 +48,9 @@ export function StageCard({ data }: { data: projectStageInterface }) {
           <div className={cssClasses(styles.card_title, lato.className)}>
             {data.name}
           </div>
-          <div className={styles.tagline}>{data.tagline}</div>
+          <div className={cssClasses(styles.tagline, montserrat.className)}>
+            {data.tagline}
+          </div>
         </div>
         <div className={styles.button}></div>
       </div>

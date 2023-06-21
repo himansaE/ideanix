@@ -41,7 +41,7 @@ export const project_stages: projectStageInterface[] = [
   {
     name: "Guidance Sessions",
     tagline:
-      "Empowering innovation and entrepreneurship through expert-led guidance and industry insights.",
+      "Participants will learn about the Tech industry, how to identify problems and provide solutions, and what it means to be an entrepreneur. The program is a one day physical session and it is divided into 2 main sessions: Inspiration and Design Thinking",
     description:
       "Equip students with the knowledge and skills needed to succeed in the IT and entrepreneurship fields. Through a series of inspiring sessions, participants explore various career paths within the industry. They learn the fundamentals of design thinking (DT) and business management canvas (BMC) to identify problems, generate innovative solutions, and develop their ideas into startup-level concepts.",
     image: "/images/guidance.webp",
@@ -49,7 +49,7 @@ export const project_stages: projectStageInterface[] = [
   {
     name: "Ideathon",
     tagline:
-      "Unleashing creativity and problem-solving skills to shape innovative ideas and refine designs.",
+      "Teams will be given a Business Canvas Model to help them develop their ideas into viable business plans. They will also be mentored by professionals in the industry who can help them refine their ideas and make them more marketable.",
     description:
       "Participants unleash their creativity and problem-solving abilities in the ideathon chapter, where they present their unique ideas. They then move into the designathon segment, where they enhance their designs by incorporating user-centric approaches, refining usability, aesthetics, and functionality.Their designs are evaluated by a panel of judges, showcasing their innovation and design skills.",
     image: "/images/designathon.webp",
@@ -57,7 +57,7 @@ export const project_stages: projectStageInterface[] = [
   {
     name: "Hackathon",
     tagline:
-      "Collaborative coding marathon to transform ideas into functional prototypes and solutions.",
+      "Teams will have two weeks to develop their ideas into fully functional products. The teams will then present their products to a panel of judges at the grand finale and the top 03 teams will receive a cash prize.",
     description:
       "In the final phase, participants transform their ideas into tangible outcomes. Through an intensive hackathon, they develop functional prototypes or final products, overcoming technical challenges and incorporating cutting-edge technologies. Their final outputs are presented to the panel of judges, who assess the innovation, technical implementation, and viability of their solutions.",
     image: "/images/hackathon.webp",
@@ -156,7 +156,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-07-14").getTime(),
         items: [
           {
-            name: "Semi Final",
+            name: "Semi Finale",
             des: "Teams present ideas to judges, showcasing potential and value.",
           },
         ],
@@ -199,11 +199,11 @@ export const project_timeline: ProjectPhraseInterface[] = [
         time: new Date("2023-08-15").getTime(),
         items: [
           {
-            name: "Grand Final",
+            name: "Grand Finale",
             des: "The hackathon phase commences, allowing teams to collaborate, code, and build their solutions within a specified time frame.",
           },
           {
-            name: "Awards ceremony",
+            name: "Award ceremony",
             des: "Unveiling Winners, Commending Achievements!",
           },
         ],

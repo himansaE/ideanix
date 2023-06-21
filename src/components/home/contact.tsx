@@ -33,8 +33,9 @@ export default function Contact() {
           <Image
             src="/ieee_cs_logo.png"
             alt="IEEE cs logo of SLTC"
-            width={235.9}
+            width={228.36}
             height={100}
+            unoptimized
           />
           <h3 className={montserrat.className}>
             We Are The Home For Computer Science And Engineering Leaders
@@ -110,19 +111,19 @@ const heads_list: CartInterface[] = [
   },
   {
     name: "Sasindu Lakshan",
-    pos: "Chairmen - IEEE CS of SLTC",
+    pos: "Chairman - IEEE CS of SLTC",
     phone: "762889063",
     email: "sasindulakshan10@gmail.com",
   },
   {
     name: "Sasanka Rajapaksha",
-    pos: "Co-Chairmen of IdeaniX",
+    pos: "Co-Chairman of IdeaniX",
     phone: "761680437",
     email: "rvsp.sasanka@gmail.com",
   },
   {
     name: "Sheshan Hebron",
-    pos: "Co-Chairmen of IdeaniX",
+    pos: "Co-Chairman of IdeaniX",
     phone: "769011104",
     email: "rvsp.sasanka@gmail.com",
   },

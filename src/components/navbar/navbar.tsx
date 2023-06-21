@@ -34,7 +34,7 @@ export const nav_items: {
   //   url: "/#about",
   // },
   {
-    name: "Contact",
+    name: "Contact Us",
     url: "/#contact",
   },
 ];
@@ -61,7 +61,7 @@ export default function NavBar({
     <>
       <SideNav open={side_nav_open} data={nav_items} setter={setSideNavOpen} />
       <nav className={cssClasses(style.nav, side_nav_open ? style.open_d : "")}>
-        <Link href="/#home">
+        <Link href="/#home" aria-label="Home">
           <div className={style.logo_con}>
             <Image
               style={{
@@ -88,6 +88,7 @@ export default function NavBar({
               alt=""
               height={40}
               width={91.3}
+              loading="eager"
               unoptimized
             />
           </div>

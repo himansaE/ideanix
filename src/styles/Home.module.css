@@ -10,6 +10,7 @@
 .page {
   position: relative;
   width: 100%;
+  scroll-margin: 50px;
 }
 .home_page {
   display: flex;
@@ -18,6 +19,11 @@
   min-height: max(100vh, 700px);
   padding-top: 45px;
   overflow: hidden;
+}
+.overview_page {
+  padding: 50px 0px;
+  background-color: #000000db;
+  clip-path: inset(0 0 0 0);
 }
 .stages_page {
   padding: 50px 0px;

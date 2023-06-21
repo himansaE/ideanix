@@ -8,7 +8,7 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "../components/register/register.module.css";
 import Head from "next/head";
@@ -19,8 +19,9 @@ import {
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import { montserrat, open_sans } from "@/lib/fonts";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { NextPageContext } from "next/types";
+import Link from "next/link";
 
 // #region Fonts
 
@@ -205,8 +206,34 @@ function RegisterPage() {
   );
 }
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+const REGISTER_FORM_LINK =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdmu0eLesyZPcC1SDqcU_a9Jv4ICyiTBhnOa4Dmw5OtqFjw_Q/viewform";
 
 const Register = () => {
+  const shouldRedirect = true;
+  const router = useRouter();
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      setTimeout(() => {
+        router.replace(REGISTER_FORM_LINK);
+      }, 2000);
+    }
+  }, []);
+
+  if (shouldRedirect)
+    return (
+      <span>
+        Redirecting to{" "}
+        <Link
+          style={{ color: "#8ab4f8", textDecoration: "underline" }}
+          href={REGISTER_FORM_LINK}
+        >
+          {REGISTER_FORM_LINK}
+        </Link>{" "}
+        in 2sec.
+      </span>
+    );
   return (
     <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY ?? ""}>
       <ThemeProvider theme={darkTheme}>
@@ -220,18 +247,4 @@ const Register = () => {
   );
 };
 
-export async function getServerSideProps(context: NextPageContext) {
-  if (context.res) {
-    // Server-side rendering
-    context.res.writeHead(302, {
-      Location:
-        "https://docs.google.com/forms/d/e/1FAIpQLSdmu0eLesyZPcC1SDqcU_a9Jv4ICyiTBhnOa4Dmw5OtqFjw_Q/viewform",
-    });
-    context.res.end();
-  }
-
-  return {
-    props: {},
-  };
-}
 export default Register;

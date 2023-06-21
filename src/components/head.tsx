@@ -12,6 +12,7 @@ export default function Header() {
         name="keywords"
         content="Ideanix, SLTC, student community, empowering students, innovative ideas, resources and guidance, Ideathon, Designathon, Hackathon, industry-level mentoring, real-world experience, startups, IT industry, TED talks, innovation, creativity, success, empowerment, Sri Lanka"
       />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );
 }

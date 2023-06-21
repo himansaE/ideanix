@@ -7,9 +7,10 @@ import StagesPage from "@/components/home/stages_page";
 import Home from "@/components/home/home";
 import Timeline from "@/components/home/timeline";
 import Header from "@/components/head";
-import Rules from "@/components/home/rules";
+// import Rules from "@/components/home/rules";
 import Footer from "@/components/home/footer";
 import Contact from "@/components/home/contact";
+import Overview from "@/components/home/overview";
 
 // fonts
 
@@ -17,16 +18,17 @@ export default function HomePage() {
   const [nav_logo_type, setNavLogoType] = useState(NavLogoType._NONE);
   const [curr_id, setCurrentID] = useState("");
   const [hide_reg_button, setHideRegButton] = useState(true);
+  const main_ref = useRef<HTMLElement>(null);
   const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    main_ref.current && (main_ref.current.style.scrollBehavior = "smooth");
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setCurrentID(`/#${entry.target.id}`);
-            if (entry.target.id === "home" || entry.target.id === "phases")
-              setHideRegButton(true);
+            if (entry.target.id === "home") setHideRegButton(true);
             else setHideRegButton(false);
           }
         });
@@ -53,13 +55,19 @@ export default function HomePage() {
         fix_size
         hideReg={hide_reg_button}
       />
-      <main className={styles.main} id="main">
+      <main className={styles.main} id="main" ref={main_ref}>
         <BlurFilter />
         <section
           id="home"
           className={cssClasses(styles.page, styles.home_page)}
         >
           <Home setNavLogoType={setNavLogoType} />
+        </section>
+        <section
+          id="overview"
+          className={cssClasses(styles.page, styles.overview_page)}
+        >
+          <Overview />
         </section>
         <section
           id="phases"
