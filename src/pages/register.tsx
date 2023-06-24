@@ -214,11 +214,15 @@ const Register = () => {
   const router = useRouter();
 
   useEffect(() => {
+    let timeout: unknown;
     if (shouldRedirect) {
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         router.replace(REGISTER_FORM_LINK);
       }, 2000);
     }
+    return () => {
+      clearTimeout(timeout as number);
+    };
   }, []);
 
   if (shouldRedirect)
