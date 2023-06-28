@@ -1,8 +1,7 @@
-import { bucket } from "@/lib/firebase/firestore";
 import { generateRandomToken } from "@/lib/lib";
 import type { NextApiRequest, NextApiResponse } from "next";
 import formidable, { Fields, Files } from "formidable";
-import { readFileSync } from "fs";
+import { authenticateGoogle, uploadToGoogleDrive } from "@/lib/firebase/google";
 export const config = {
   api: {
     bodyParser: false,
@@ -41,19 +40,9 @@ export default async function handler(
     ? formData.files.file[0]
     : formData.files.file;
 
-  const file = readFileSync(fileData.filepath);
-
   const token = generateRandomToken(60);
-  const tempRef = bucket.file("temp/" + token + ".pdf");
-  const tempWriteStream = tempRef.createWriteStream();
-  tempWriteStream.write(file, (error) => {
-    if (error) {
-      res.send({ error: true, error_data: error });
-    } else {
-      res.send({
-        error: false,
-        token: token,
-      });
-    }
-  });
+
+  const auth = authenticateGoogle();
+  const response = await uploadToGoogleDrive(fileData.filepath, auth, token);
+  res.send({ error: false });
 }

@@ -46,6 +46,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #ffffff96;
 }
 .file_error {
   color: #ff7474;

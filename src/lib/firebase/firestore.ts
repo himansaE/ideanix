@@ -1,6 +1,5 @@
 import admin from "firebase-admin";
 import { getFirestore } from "firebase-admin/firestore";
-import { getStorage } from "firebase-admin/storage";
 let fire_config;
 try {
   fire_config = require("/admin-sdk.json");
@@ -20,8 +19,6 @@ try {
 }
 const firestore = getFirestore();
 
-export const storage = getStorage();
-export const bucket = storage.bucket("my-bucket");
 export default firestore;
 export const memRef = firestore.collection("members");
 export const teamsRef = firestore.collection("teams");

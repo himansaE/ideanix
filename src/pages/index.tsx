@@ -11,6 +11,7 @@ import Header from "@/components/head";
 import Footer from "@/components/home/footer";
 import Contact from "@/components/home/contact";
 import Overview from "@/components/home/overview";
+import Rules from "@/components/home/rules";
 
 // fonts
 
@@ -87,12 +88,12 @@ export default function HomePage() {
         >
           <Timeline />
         </section>
-        {/* <section
+        <section
           id="rules"
           className={cssClasses(styles.page, styles.rules_page)}
         >
           <Rules />
-        </section> */}
+        </section>
         <section
           className={cssClasses(styles.page, styles.contact_page)}
           id="contact"

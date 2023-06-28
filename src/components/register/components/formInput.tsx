@@ -111,7 +111,9 @@ export const FormFileInput = (props: {
   onChange: (val: string) => void;
   handleFocus: () => void;
 }) => {
-  const [file_name, setFileName] = useState<string | undefined>("");
+  const [file_name, setFileName] = useState<string | undefined>(
+    "Choose a file."
+  );
   const [state, setState] = useState(FormInputState._NONE);
   const [progress, setProgress] = useState(40);
 
@@ -150,8 +152,9 @@ export const FormFileInput = (props: {
             accept="application/pdf"
             onChange={(e) => {
               if (state === FormInputState._UPLOADING) return;
-              if (!e.target.files) return;
-              if (e.target.files.length == 0) return;
+              if (!e.target.files) return setFileName("Choose a file..");
+              if (e.target.files.length == 0)
+                return setFileName("Choose a file.");
               props.onChange("");
               setFileName(e.target.files?.[0].name);
               setProgress(0);

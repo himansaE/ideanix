@@ -123,6 +123,13 @@ export default function TeamInfo(props: RegisterSubPageProps) {
           onChange={onInputChange("name")}
           handleFocus={handleFocus("name")}
         />
+        <FormFileInput
+          title="Project Proposal"
+          name="file"
+          data={form_data.file}
+          onChange={onInputChange("file")}
+          handleFocus={handleFocus("file")}
+        />
         <FormTextBox
           title="Number of Team members ( 3 - 5 members )"
           name="mem_count"
@@ -140,13 +147,6 @@ export default function TeamInfo(props: RegisterSubPageProps) {
             onInputChange("count")(_val.toString());
           }}
           handleFocus={handleFocus("count")}
-        />
-        <FormFileInput
-          title="Project Proposal"
-          name="file"
-          data={form_data.file}
-          onChange={onInputChange("file")}
-          handleFocus={handleFocus("file")}
         />
       </FormBox>
       <h3 className={cssClasses(style.form_title, style.form_title_sub)}>
