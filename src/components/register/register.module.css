@@ -36,8 +36,28 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #00000085;
-  z-index: 15;
+  background-color: #000000ba;
+  z-index: 5;
+}
+.popup_con {
+  position: fixed;
+  background-color: #1a1a1e;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 60px;
+  border-radius: 15px;
+}
+.popup_con_s {
+  flex-direction: column;
+}
+.button_row {
+  display: flex;
+  gap: 26px;
 }
 .form_con {
   max-width: 900px;

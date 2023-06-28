@@ -210,3 +210,6 @@ export const project_timeline: ProjectPhraseInterface[] = [
     ],
   },
 ];
+
+export const MAX_MEM_COUNT = 5;
+export const MIN_MEM_COUNT = 3;

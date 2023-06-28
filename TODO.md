@@ -6,4 +6,5 @@ This is the main Todo file in the project
 - [ ] get favicon form design team and use it.
 - [-] add meta tags
 - [-] use requestAnimationFrame to optimize scroll logo
-- [-] add twitter tags
+- [] add twitter tags
+- [] add recaptcha to the file upload

@@ -20,6 +20,8 @@ export interface FormItems {
   school_3: string;
   team_name: string;
   token: string;
+  file: string;
+  mem_count: number;
 }
 
 const formItemKeys: (keyof FormItems)[] = [
@@ -43,6 +45,8 @@ const formItemKeys: (keyof FormItems)[] = [
   "school_2",
   "school_3",
   "team_name",
+  "file",
+  "mem_count",
 ];
 
 export const validateFormData = (data: FormItems) => {

@@ -5,7 +5,7 @@ import firestore, { memRef, teamsRef } from "./firestore";
 
 export function formatFromFromItem(data: FormItems) {
   const members = [];
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= data.mem_count; i++) {
     members.push({
       id: (data[`id_${i}` as keyof FormItems] as string).trim().toUpperCase(),
       name: (data[`name_${i}` as keyof FormItems] as string).trim(),
@@ -17,6 +17,8 @@ export function formatFromFromItem(data: FormItems) {
   }
   const team = {
     name: data.team_name.trim(),
+    members_count: data.mem_count,
+    file: data.file,
   };
   return Object.freeze({ team, members });
 }
@@ -37,7 +39,8 @@ export async function putDataToFirestore(
   batch.set(team, {
     name: data.team.name,
     leader: mem_refs[0],
-    members: [mem_refs[1], mem_refs[2]],
+    members: mem_refs,
+    file: data.team.file,
   });
 
   for (const i of data.members) {

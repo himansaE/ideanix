@@ -30,3 +30,23 @@
   width: 100%;
   max-width: 500px;
 }
+.hidden {
+  display: none;
+}
+.file_input {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.file_name {
+  font-size: 0.8em;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.file_error {
+  color: #ff7474;
+}

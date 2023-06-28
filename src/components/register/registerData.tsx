@@ -14,6 +14,8 @@ export interface RegisterSubPageProps {
   index: number;
   is_rendered: boolean;
   button_click: number;
+  mem_count: number;
+  setMemCount: Dispatch<SetStateAction<number>>;
 }
 export interface InputDataInterface {
   value: string;

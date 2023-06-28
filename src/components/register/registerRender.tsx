@@ -19,6 +19,8 @@ export default function RegisterFormRender(props: RegisterSubPageProps) {
                   setLastStateComplete={props.setLastStateComplete}
                   is_rendered={i.i == props.index + 1}
                   button_click={props.button_click}
+                  mem_count={props.mem_count}
+                  setMemCount={props.setMemCount}
                 />
               </div>
             </div>

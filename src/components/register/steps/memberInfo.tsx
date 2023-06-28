@@ -8,6 +8,7 @@ import style from "./step.module.css";
 import { deepCopy } from "@/lib/lib";
 import FormBox from "../components/formBox";
 import { FormSelect, FormTextBox } from "../components/formInput";
+import { MIN_MEM_COUNT } from "@/lib/projectData";
 
 interface formData_inf {
   name: InputDataInterface;
@@ -17,28 +18,47 @@ interface formData_inf {
   school: InputDataInterface;
   batch: InputDataInterface;
 }
+
+const GenInitInputData = (count: number) => {
+  const list = [];
+  for (let i = 0; i < count; i++) {
+    list.push({
+      name: initInputData(),
+      mail: initInputData(),
+      phone: initInputData(),
+      id: initInputData(),
+      school: initInputData(),
+      batch: initInputData(),
+    });
+  }
+  return list;
+};
+
 export default function MemberInfo(props: RegisterSubPageProps) {
   const [complete, setComplete] = useState(false);
   const [error_checked, setErrorChecked] = useState(false);
 
-  const [form_data, setFormData] = useState<[formData_inf, formData_inf]>([
-    {
-      name: initInputData(),
-      mail: initInputData(),
-      phone: initInputData(),
-      id: initInputData(),
-      school: initInputData(),
-      batch: initInputData(),
-    },
-    {
-      name: initInputData(),
-      mail: initInputData(),
-      phone: initInputData(),
-      id: initInputData(),
-      school: initInputData(),
-      batch: initInputData(),
-    },
-  ]);
+  useEffect(() => {
+    if (props.mem_count - 1 > form_data.length) {
+      const _form_data = [
+        ...deepCopy(form_data),
+        ...GenInitInputData(props.mem_count - 1 - form_data.length),
+      ];
+      setFormData([
+        ..._form_data,
+        ...GenInitInputData(form_data.length - (props.mem_count - 1)),
+      ]);
+    }
+    if (props.mem_count - 1 < form_data.length) {
+      const _form_data = deepCopy(form_data).slice(0, props.mem_count - 1);
+      setFormData(_form_data);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.mem_count]);
+
+  const [form_data, setFormData] = useState<formData_inf[]>(
+    GenInitInputData(MIN_MEM_COUNT - 1)
+  );
 
   useEffect(() => {
     if (props.is_rendered) {
@@ -116,65 +136,65 @@ export default function MemberInfo(props: RegisterSubPageProps) {
         In this step enter your team member details.
       </h3>
 
-      {[2, 3].map((i) => (
+      {form_data.map((data, i) => (
         <FormBox key={i}>
-          <h3 className={style.form_title}>Member - {i}</h3>
+          <h3 className={style.form_title}>Member - {i + 2}</h3>
           <FormTextBox
             title="Name of the Member"
-            name={"name_" + i}
-            data={form_data[i - 2].name}
-            onChange={onInputChange("name", i - 2)}
-            handleFocus={handleFocus("name", i - 2)}
+            name={"name_" + (i + 2)}
+            data={form_data[i].name}
+            onChange={onInputChange("name", i)}
+            handleFocus={handleFocus("name", i)}
           />
           <FormTextBox
             title="SLTC Registration Number"
-            name={"id_" + i}
-            data={form_data[i - 2].id}
-            onChange={onInputChange("id", i - 2)}
-            handleFocus={handleFocus("id", i - 2)}
+            name={"id_" + (i + 2)}
+            data={form_data[i].id}
+            onChange={onInputChange("id", i)}
+            handleFocus={handleFocus("id", i)}
           />
           <FormTextBox
             title="Contact Number (WhatsApp)"
-            name={"phone_" + i}
-            data={form_data[i - 2].phone}
-            onChange={onInputChange("phone", i - 2)}
-            handleFocus={handleFocus("phone", i - 2)}
+            name={"phone_" + (i + 2)}
+            data={form_data[i].phone}
+            onChange={onInputChange("phone", i)}
+            handleFocus={handleFocus("phone", i)}
           />
           <FormTextBox
             title="SLTC Email - This email will be used to contact the whole team"
-            name={"email_" + i}
-            data={form_data[i - 2].mail}
-            onChange={onInputChange("mail", i - 2)}
-            handleFocus={handleFocus("mail", i - 2)}
+            name={"email_" + (i + 2)}
+            data={form_data[i].mail}
+            onChange={onInputChange("mail", i)}
+            handleFocus={handleFocus("mail", i)}
           />
 
           <FormSelect
             title="Faculty /School"
-            name={"school_" + i}
-            data={form_data[i - 2].school}
-            onChange={onInputChange("school", i - 2)}
+            name={"school_" + (i + 2)}
+            data={form_data[i].school}
+            onChange={onInputChange("school", i)}
             values={[
               ["soe", "School of Engineering"],
               ["soc", "School of Computing & IT"],
               ["sot", "School of Technology"],
             ]}
-            handleFocus={handleFocus("school", i - 2)}
+            handleFocus={handleFocus("school", i)}
           />
           <FormSelect
             title="Batch"
-            name={"batch_" + i}
-            data={form_data[i - 2].batch}
-            onChange={onInputChange("batch", i - 2)}
+            name={"batch_" + (i + 2)}
+            data={form_data[i].batch}
+            onChange={onInputChange("batch", i)}
             values={[
-              ["6", "Batch 6"],
-              ["7", "Batch 7"],
-              ["8a", "Batch 8A"],
-              ["8b", "Batch 8B"],
-              ["9a", "Batch 9A"],
-              ["9b", "Batch 9B"],
-              ["10", "Batch 10"],
+              ["6", "2023"],
+              ["7", "2024"],
+              ["8a", "2025A"],
+              ["8b", "2025B"],
+              ["9a", "2026A"],
+              ["9b", "2026B"],
+              ["10", "2027"],
             ]}
-            handleFocus={handleFocus("batch", i - 2)}
+            handleFocus={handleFocus("batch", i)}
           />
         </FormBox>
       ))}

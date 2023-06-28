@@ -2,6 +2,7 @@ import NavBar, { NavLogoType } from "@/components/navbar/navbar";
 import { register_form_data } from "@/components/register/registerData";
 import {
   Button,
+  CircularProgress,
   Step,
   StepLabel,
   Stepper,
@@ -22,6 +23,8 @@ import { montserrat, open_sans } from "@/lib/fonts";
 import Router, { useRouter } from "next/router";
 import { NextPageContext } from "next/types";
 import Link from "next/link";
+import { MIN_MEM_COUNT } from "@/lib/projectData";
+import { cssClasses } from "@/lib/lib";
 
 // #region Fonts
 
@@ -45,11 +48,21 @@ function RegisterPage() {
   const [curr_index, setCurrIndex] = useState(0);
   const [last_index_complete, setLastStateComplete] = useState(false);
   const [button_click, nextClick] = useState(0);
+  const [mem_count, setMemCount] = useState(MIN_MEM_COUNT);
+
+  const router = useRouter();
+  //TODO
   const [state, setState] = useState({
     status: _SubmittingStatus._NO,
     text: "",
   });
-
+  useEffect(() => {
+    if (localStorage.getItem("done") == "1")
+      setState({
+        status: _SubmittingStatus._DONE,
+        text: "",
+      });
+  }, []);
   const form_ref = useRef<HTMLFormElement>(null);
 
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -90,10 +103,10 @@ function RegisterPage() {
       const data = await res.json();
 
       if (res.status === 200 && data.error === false) {
-        //TODO: show Submit done
+        localStorage.setItem("done", "1");
         return setSubmit(_SubmittingStatus._NO, "");
       }
-      return setSubmit(_SubmittingStatus._ERROR, data.text);
+      return setSubmit(_SubmittingStatus._DONE, data.text);
     } catch {
       return setState({
         ...state,
@@ -106,7 +119,34 @@ function RegisterPage() {
   return (
     <div className={styles.con}>
       {state.status === _SubmittingStatus._SUBMITTING ? (
-        <div className={styles.popup}></div>
+        <div className={styles.popup}>
+          <div className={styles.popup_con}>
+            <CircularProgress />
+            <div className={montserrat.className}>Submitting.</div>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+      {state.status === _SubmittingStatus._DONE ? (
+        <div className={styles.popup}>
+          <div className={cssClasses(styles.popup_con, styles.popup_con_s)}>
+            <div className={montserrat.className}>Submission Successful.!</div>
+            <div className={styles.button_row}>
+              <Button
+                onClick={() => {
+                  localStorage.removeItem("done");
+                  router.reload();
+                }}
+              >
+                Resubmit
+              </Button>
+              <Button href="/" variant="contained">
+                Home
+              </Button>
+            </div>
+          </div>
+        </div>
       ) : (
         <></>
       )}
@@ -134,6 +174,8 @@ function RegisterPage() {
             setLastStateComplete={setLastStateComplete}
             is_rendered
             button_click={button_click}
+            mem_count={mem_count}
+            setMemCount={setMemCount}
           />
         </form>
         <div className={styles.error}>
@@ -206,11 +248,12 @@ function RegisterPage() {
   );
 }
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+const STAGE = process.env.NEXT_PUBLIC_STAGE;
 const REGISTER_FORM_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSdmu0eLesyZPcC1SDqcU_a9Jv4ICyiTBhnOa4Dmw5OtqFjw_Q/viewform";
 
 const Register = () => {
-  const shouldRedirect = true;
+  const shouldRedirect = STAGE == "1";
   const router = useRouter();
 
   useEffect(() => {

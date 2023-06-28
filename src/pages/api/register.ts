@@ -33,6 +33,7 @@ export default async function Register(
     });
   }
 
+  console.log(data);
   // verify recaptcha token
   const validate = await verifyRecaptchaToken(
     data.token,
