@@ -56,22 +56,18 @@ export default function Rules_N_Reg(props: RegisterSubPageProps) {
 export function RulesText() {
   return (
     <div className={cssClasses(style.rules_con, montserrat.className)}>
-      <h2>Welcome to the Ideanix Generation 1!</h2>
-      <p>
-        Before participating in the Ideanix, we kindly ask you to read and
-        understand the following rules and regulations. By accessing and using
-        our website, you agree to comply with these rules and regulations in
-        their entirety. If you do not agree with any part of these terms, please
-        refrain from using our website.
-      </p>
-      <h3>Basic Rules & Regulations:</h3>
+      <h3>Basic Rules & Regulations</h3>
       <ul>
         <li>
           All participants should be undergraduates of SLTC Research University.
         </li>
         <li>
-          A team should consist of 2 to 5 members, not be from the same Batch or
-          same Degree program.
+          A team shall comprise a minimum of 2 members and a maximum of 5
+          members.
+        </li>
+        <li>
+          The composition of a team may consist of individuals from different
+          batches.
         </li>
         <li>One contestant can represent only one team.</li>
         <li>The ideas should be original and innovative.</li>
@@ -85,11 +81,11 @@ export function RulesText() {
         </li>
       </ul>
 
-      <h3>Important Information about the competition:</h3>
+      <h3>Important Information about the competition</h3>
       <ul>
         <li>
-          Registration for the competition will be open from 28th June at 6 p.m.
-          to 12th July at 12 a.m.
+          Registration for the competition will be open from 29th June 7 p.m. to
+          5th July 12 a.m.
         </li>
         <li>
           Incomplete submissions or any submissions related to the current
@@ -105,35 +101,27 @@ export function RulesText() {
           in English)
         </li>
         <li>
-          From all the submissions, top 20 teams will be selected for the
+          From all the submissions top 20 teams will be selected for the
           semi-finals and the judge&apos;s decision is the final decision that
           cannot be changed, irrevocable.
         </li>
       </ul>
 
-      <h3>Semi-Finals rules:</h3>
+      <h3>Semi-Finals rules</h3>
       <ul>
+        <li>The best performing 20 teams will have the BMC session.</li>
         <li>
           The selected teams must present the submitted proposals physically in
           front of a judging board on the 14th of July.
         </li>
         <li>A maximum of 5 minutes will be given for that.</li>
         <li>
-          The best performing 10 teams will be selected for the BMC session.
-          (The judge&apos;s decision is the final decision that cannot be
-          changed, irrevocable.)
-        </li>
-        <li>
-          Those who participate and completed the BMC will be directly passed to
-          the finals.
-        </li>
-        <li>
           Once the top 10 teams are announced, they will be given 4 weeks (a
           one-month) to develop their ideas into final output.
         </li>
       </ul>
 
-      <h3>Finals rules:</h3>
+      <h3>Grand-Finals rules</h3>
       <ul>
         <li>
           Finalist teams will be assigned to respected mentors according to the
@@ -144,8 +132,11 @@ export function RulesText() {
           Competitors are highly encouraged to present a final product or a
           reasonable prototype for the final event.
         </li>
-        <li>Finalist teams will be announced on the 13th of August 2023.</li>
-        <li>Grand Finale will be held on the 15th of August 2023.</li>
+        <li>
+          The top 10 teams need to present their prototype in front of a judge
+          panel and the judge&apos;s decision is the final decision.
+        </li>
+        <li>The Grand Finale will be held on the 15th of August 2023.</li>
       </ul>
     </div>
   );
