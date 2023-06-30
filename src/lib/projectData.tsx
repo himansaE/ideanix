@@ -105,7 +105,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-06-28").getTime(),
+        time: new Date("2023-06-30").getTime(),
         items: [
           {
             name: "Registration Start",
@@ -114,7 +114,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-07-05").getTime(),
+        time: new Date("2023-07-12").getTime(),
         items: [
           {
             name: "Registration End",
@@ -129,7 +129,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
     name: "Ideathon",
     dates: [
       {
-        time: new Date("2023-07-10").getTime(),
+        time: new Date("2023-08-11").getTime(),
         items: [
           {
             name: "Announce Top 20 teams",
@@ -138,7 +138,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-07-11").getTime(),
+        time: new Date("2023-08-11").getTime(),
         items: [
           {
             name: "BMC session",
@@ -152,7 +152,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-07-14").getTime(),
+        time: new Date("2023-08-15").getTime(),
         items: [
           {
             name: "Semi Finale",
@@ -161,7 +161,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-07-15").getTime(),
+        time: new Date("2023-08-16").getTime(),
         items: [
           {
             name: "Announce Top 10 teams",
@@ -176,7 +176,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
     name: "Hackathon",
     dates: [
       {
-        time: new Date("2023-07-15").getTime(),
+        time: new Date("2023-08-16").getTime(),
         items: [
           {
             name: "Prototype submission start",
@@ -185,7 +185,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-08-11").getTime(),
+        time: new Date("2023-09-05").getTime(),
         items: [
           {
             name: "Prototype submission deadline",
@@ -195,7 +195,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
       },
 
       {
-        time: new Date("2023-08-15").getTime(),
+        time: new Date("2023-09-08").getTime(),
         items: [
           {
             name: "Grand Finale",

@@ -187,11 +187,16 @@ export default function Home({
           </div>
           <div className={styles.home_button_list}>
             <LinkButton text="Register Now" link="/register" />
-            <ActionButton
+            <LinkButton
+              invert
+              text="Sample proposal"
+              link="https://docs.google.com/document/d/1cnncKsspEtAus99_lr65b1kfV0BU1c6G/edit?usp=sharing&ouid=116556379645380962110&rtpof=true&sd=true"
+            />
+            {/* <ActionButton
               text="Watch Intro "
               invert
               action={() => setShowDialog(true)}
-            />
+            /> */}
           </div>
         </div>
       </div>
