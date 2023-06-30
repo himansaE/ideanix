@@ -125,7 +125,7 @@ export function RulesText() {
           The top 10 teams need to present their prototype in front of a judge
           panel and the judge&apos;s decision is the final decision.
         </li>
-        <li>The Grand Finale will be held on the 20th of September 2023.</li>
+        <li>The Grand Finale will be held on the 10th of September 2023.</li>
       </ul>
     </div>
   );

@@ -185,7 +185,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
         ],
       },
       {
-        time: new Date("2023-09-05").getTime(),
+        time: new Date("2023-09-08").getTime(),
         items: [
           {
             name: "Prototype submission deadline",
@@ -195,7 +195,7 @@ export const project_timeline: ProjectPhraseInterface[] = [
       },
 
       {
-        time: new Date("2023-09-20").getTime(),
+        time: new Date("2023-09-10").getTime(),
         items: [
           {
             name: "Grand Finale",
