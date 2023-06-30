@@ -249,7 +249,7 @@ function RegisterPage() {
 }
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 const STAGE = process.env.NEXT_PUBLIC_STAGE;
-const REGISTER_FORM_LINK = "https://forms.gle/rhWZBA4GxPagbXzC6";
+const REGISTER_FORM_LINK = "https://forms.gle/yXECKqBufWnGv4eE9";
 
 const Register = () => {
   const shouldRedirect = STAGE == "1";
