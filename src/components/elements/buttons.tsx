@@ -16,6 +16,7 @@ interface LinkButtonProps {
   invert?: boolean;
   button_background?: string;
   button_hover_background?: string;
+  open_new_tab?: boolean;
 }
 
 export function ActionButton(props: ActionButtonProps) {
@@ -37,7 +38,7 @@ export function ActionButton(props: ActionButtonProps) {
 export function LinkButton(props: LinkButtonProps) {
   return (
     <div>
-      <Link href={props.link}>
+      <Link href={props.link} target="_blank" rel="noopener noreferrer">
         <ActionButton
           text={props.text}
           invert={props.invert}
