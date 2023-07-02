@@ -39,11 +39,12 @@ export default function Footer() {
         ))}
       </div>
       <div className={cssClasses(styles.credit, montserrat.className)}>
-        Copyright © IdeaniX Gen 01 <b> • </b> IEEE CS Chapter of SLTC
-        {/* <br /> Designed & developed by{" "}
+        Copyright © IdeaniX Gen 01 <b>&nbsp; • &nbsp;</b> IEEE CS Chapter of
+        SLTC
+        <br /> Designed & developed by{" "}
         <Link href={"https://www.linkedin.com/in/himanse/"}>
           Himansa Wickramasinghe
-        </Link> */}
+        </Link>
       </div>
     </div>
   );
