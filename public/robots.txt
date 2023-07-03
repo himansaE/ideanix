@@ -6,4 +6,4 @@ Disallow: /static/
 
 Allow: /_next/image*
 
-Sitemap: /sitemap.xml
+Sitemap: https://ideanix.vercel.app/sitemap.xml
