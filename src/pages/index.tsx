@@ -12,6 +12,7 @@ import Footer from "@/components/home/footer";
 import Contact from "@/components/home/contact";
 import Overview from "@/components/home/overview";
 import Rules from "@/components/home/rules";
+import Sponsor from "@/components/home/sponsor";
 
 // fonts
 
@@ -93,6 +94,12 @@ export default function HomePage() {
           className={cssClasses(styles.page, styles.rules_page)}
         >
           <Rules />
+        </section>
+        <section
+          id="sponsor"
+          className={cssClasses(styles.page, styles.sponsor_page)}
+        >
+          <Sponsor />
         </section>
         <section
           className={cssClasses(styles.page, styles.contact_page)}

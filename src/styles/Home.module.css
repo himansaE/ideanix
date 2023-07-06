@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   background-color: #b64e601f;
-  min-height: max(100vh, 700px);
+  min-height: max(100vh, 740px);
   padding-top: 45px;
   overflow: hidden;
 }
@@ -29,6 +29,9 @@
   background-color: #060010;
 }
 .timeline_page {
+  background-color: black;
+}
+.sponsor_page {
   background-color: black;
 }
 .rules_page {

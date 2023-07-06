@@ -20,7 +20,7 @@ export default function Footer() {
     <div className={styles.con}>
       <div className={styles.sponsors}>
         <Sponsors
-          type="Powered by"
+          type="Title Sponsor"
           image="/images/aqcellor logo.svg"
           name="Aqcellor"
           height={100}

@@ -9,7 +9,7 @@ import Image from "next/image";
 import BlurSquare from "../anims/blurSquare";
 import { cssClasses } from "@/lib/lib";
 import { ProjectTitles, project_titles } from "@/lib/projectData";
-import { ActionButton, LinkButton, RoundIconButton } from "../elements/buttons";
+import { LinkButton, RoundIconButton } from "../elements/buttons";
 import { NavLogoType } from "../navbar/navbar";
 import styles from "./home.module.css";
 import { inter, montserrat, open_sans } from "@/lib/fonts";
@@ -147,10 +147,10 @@ export default function Home({
             <div className={styles.ideanix_logo} ref={main_logo_ref}>
               <Image
                 ref={logo_ref}
-                src="/logo_colored.webp"
+                src="/LOGO powered by Aqcellor.webp"
                 alt=""
-                width={278.2}
-                height={114.4}
+                width={228.42}
+                height={114}
                 priority
                 quality={100}
               />
