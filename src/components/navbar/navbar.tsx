@@ -25,14 +25,10 @@ export const nav_items: {
     name: "Road Map",
     url: "/#timeline",
   },
-  // {
-  //   name: "Rules",
-  //   url: "/#rules",
-  // },
-  // {
-  //   name: "Team Members",
-  //   url: "/#members",
-  // },
+  {
+    name: "Rules",
+    url: "/#rules",
+  },
   // {
   //   name: "About",
   //   url: "/#about",

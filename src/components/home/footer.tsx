@@ -12,6 +12,14 @@ const list = [
       name: "Register",
       url: "/register",
     },
+    {
+      name: "Sponsors",
+      url: "/#sponsor",
+    },
+    {
+      name: "Source Code",
+      url: "https://github.com/himansaE/ideanix",
+    },
   ],
 ];
 

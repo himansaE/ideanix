@@ -1,6 +1,6 @@
 import { cssClasses } from "@/lib/lib";
 import style from "./sponsor.module.css";
-import { inter, lato, montserrat } from "@/lib/fonts";
+import { inter, montserrat } from "@/lib/fonts";
 import Image from "next/image";
 import Link from "next/link";
 
