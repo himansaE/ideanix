@@ -55,6 +55,7 @@
 }
 .mem_img {
   border-radius: 10px;
+  object-fit: cover;
 }
 .mem_name {
   margin: 8px 0 4px 0;
