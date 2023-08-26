@@ -43,6 +43,9 @@
   min-width: 300px;
   height: 4em;
 }
+.team_name > a:hover {
+  text-decoration: underline;
+}
 .team_mems {
   display: flex;
   gap: 30px 20px;

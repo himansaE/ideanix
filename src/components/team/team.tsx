@@ -3,6 +3,7 @@ import style from "./team.module.css";
 import { cssClasses } from "@/lib/lib";
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type TeamCardProps = {
   name: string;
@@ -11,9 +12,12 @@ type TeamCardProps = {
 
 export const TeamCard = ({ name, children }: TeamCardProps) => {
   return (
-    <div className={style.team}>
+    <div className={style.team} id={name.split(" ").join("_").toLowerCase()}>
       <h2 className={cssClasses(montserrat.className, style.team_name)}>
-        {name}
+        <Link href={`#${name.split(" ").join("_").toLowerCase()}`}>
+          {" "}
+          {name}
+        </Link>
       </h2>
       <div className={style.team_mems}>{children}</div>
     </div>
