@@ -29,6 +29,7 @@ export const MemberCard = ({ member }: { member: TeamMemData }) => {
         alt={`image of ${member.s_id}`}
         width={200}
         height={200}
+        unoptimized
       />
       <div className={cssClasses(montserrat.className, style.mem_name)}>
         {member.name}
