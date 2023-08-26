@@ -14,6 +14,7 @@ export default function Team() {
         <h1 className={cssClasses(inter.className, style.head)}>
           Meet Our Team.
         </h1>
+
         <div className={style.description}>
           <p className={montserrat.className}>
             Welcome to the IdeaniX Team Page, where innovation meets dedication!

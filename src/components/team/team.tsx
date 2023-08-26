@@ -34,7 +34,7 @@ export const MemberCard = ({ member }: { member: TeamMemData }) => {
         {member.name}
       </div>
       <div className={cssClasses(montserrat.className, style.mem_pos)}>
-        {member.is_leader ? "Team Leader" : <br />}
+        {member.is_leader ? "Team Leader" : "Team Member"}
       </div>
     </div>
   );
