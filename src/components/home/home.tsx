@@ -9,7 +9,7 @@ import Image from "next/image";
 import BlurSquare from "../anims/blurSquare";
 import { cssClasses } from "@/lib/lib";
 import { ProjectTitles, project_titles } from "@/lib/projectData";
-import { LinkButton, RoundIconButton } from "../elements/buttons";
+import { ActionButton, LinkButton, RoundIconButton } from "../elements/buttons";
 import { NavLogoType } from "../navbar/navbar";
 import styles from "./home.module.css";
 import { inter, montserrat, open_sans } from "@/lib/fonts";
@@ -186,17 +186,13 @@ export default function Home({
             ideas into reality.
           </div>
           <div className={styles.home_button_list}>
-            <LinkButton text="Register Now" link="/register" />
-            <LinkButton
-              invert
-              text="Sample proposal"
-              link="https://docs.google.com/document/d/1cnncKsspEtAus99_lr65b1kfV0BU1c6G/edit?usp=sharing&ouid=116556379645380962110&rtpof=true&sd=true"
-            />
-            {/* <ActionButton
+            <LinkButton text="View Results" link="/results" />
+
+            <ActionButton
               text="Watch Intro "
               invert
               action={() => setShowDialog(true)}
-            /> */}
+            />
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ interface NavbarProps {
   current?: string;
   logoType?: NavLogoType;
   fix_size?: boolean;
-  hideReg: boolean;
+  hideReg?: boolean;
 }
 export enum NavLogoType {
   _IDEANIX,

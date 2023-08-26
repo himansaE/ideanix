@@ -38,7 +38,11 @@ export function ActionButton(props: ActionButtonProps) {
 export function LinkButton(props: LinkButtonProps) {
   return (
     <div>
-      <Link href={props.link} target="_blank" rel="noopener noreferrer">
+      <Link
+        href={props.link}
+        target={props.open_new_tab ? "_blank" : undefined}
+        rel={props.open_new_tab ? "noopener noreferrer" : undefined}
+      >
         <ActionButton
           text={props.text}
           invert={props.invert}

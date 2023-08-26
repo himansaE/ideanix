@@ -1,3 +1,5 @@
+import { TeamData } from "@/components/team/team";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function cssClasses(...args: string[]) {
   return args.join(" ");
@@ -46,3 +48,42 @@ export const generateRandomToken = (length: number) => {
 
   return token;
 };
+
+export function format_team_info_from_sheet(
+  team_info: {
+    Timestamp: string;
+    "Email Address": string;
+    "Email (Campus mail only).": string;
+    "Name (With Initial)": string;
+    "Index Number.": string;
+    "Degree Program.": string;
+    "Working Team.": string;
+    "If you are Head of any Team": string;
+    "If yes, mention the team name": string;
+    "Upload Image.": string;
+  }[]
+) {
+  const data: TeamData[] = [];
+
+  team_info.forEach((team) => {
+    //check if team available
+    if (!data.some((obj) => obj.team_name == team["Working Team."])) {
+      data.push({ team_name: team["Working Team."], members: [] });
+    }
+
+    const curr_team = data.find(
+      (obj) => obj.team_name == team["Working Team."]
+    );
+
+    //creating member
+
+    curr_team?.members.push({
+      name: team["Name (With Initial)"],
+      s_id: team["Index Number."],
+      email: team["Email (Campus mail only)."],
+      is_leader: team["If you are Head of any Team"] == "Yes",
+    });
+  });
+
+  return data;
+}

@@ -9,8 +9,8 @@ const list = [
   nav_items,
   [
     {
-      name: "Register",
-      url: "/register",
+      name: "Our Team",
+      url: "/team",
     },
     {
       name: "Sponsors",

@@ -153,6 +153,9 @@
 .open_d {
   z-index: 1000;
 }
+.fake {
+  height: 68px;
+}
 @media screen and (max-width: 1000px) {
   .list {
     display: none;

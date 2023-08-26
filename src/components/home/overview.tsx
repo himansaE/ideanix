@@ -2,6 +2,7 @@ import { cssClasses } from "@/lib/lib";
 import style from "./overview.module.css";
 import { inter, lato, montserrat } from "@/lib/fonts";
 import Image from "next/image";
+import Head from "next/head";
 export default function Overview() {
   return (
     <div className={style.con}>
@@ -36,26 +37,37 @@ export default function Overview() {
 }
 
 const Card = ({ data }: { data: CardDataInf }) => (
-  <div className={style.card} style={{ backgroundColor: data.bg }}>
-    <div className={style.card_title} style={{ color: data.title_color }}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="22px"
-        height="22px"
-        viewBox="0 0 16 16"
-      >
-        <path fill="currentColor" d={data.d}></path>
-      </svg>
+  <>
+    <Head>
+      <script
+        key="rich_data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={richData()}
+      ></script>
+    </Head>
+    <div className={style.card} style={{ backgroundColor: data.bg }}>
+      <div className={style.card_title} style={{ color: data.title_color }}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22px"
+          height="22px"
+          viewBox="0 0 16 16"
+        >
+          <path fill="currentColor" d={data.d}></path>
+        </svg>
 
-      <div className={cssClasses(style.text, lato.className)}>{data.title}</div>
+        <div className={cssClasses(style.text, lato.className)}>
+          {data.title}
+        </div>
+      </div>
+      <div
+        className={cssClasses(style.des, montserrat.className)}
+        style={{ color: data.text_color }}
+      >
+        {data.des}
+      </div>
     </div>
-    <div
-      className={cssClasses(style.des, montserrat.className)}
-      style={{ color: data.text_color }}
-    >
-      {data.des}
-    </div>
-  </div>
+  </>
 );
 interface CardDataInf {
   title: string;
@@ -100,3 +112,25 @@ const card_data: CardDataInf[] = [
     title_color: "#74d497",
   },
 ];
+
+const richData = () => {
+  return {
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        ${card_data.map(
+          (i) => `{
+          "@type":"Question",
+          "name":"${i?.title}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>${i.des}</p>"
+          }
+        }`
+        )}
+      ]
+    }
+  `,
+  };
+};

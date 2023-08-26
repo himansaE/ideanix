@@ -7,7 +7,6 @@ import StagesPage from "@/components/home/stages_page";
 import Home from "@/components/home/home";
 import Timeline from "@/components/home/timeline";
 import Header from "@/components/head";
-// import Rules from "@/components/home/rules";
 import Footer from "@/components/home/footer";
 import Contact from "@/components/home/contact";
 import Overview from "@/components/home/overview";
@@ -19,7 +18,6 @@ import Sponsor from "@/components/home/sponsor";
 export default function HomePage() {
   const [nav_logo_type, setNavLogoType] = useState(NavLogoType._NONE);
   const [curr_id, setCurrentID] = useState("");
-  const [hide_reg_button, setHideRegButton] = useState(true);
   const [show_up_button, setShowUpButton] = useState(true);
   const main_ref = useRef<HTMLElement>(null);
   const observer = useRef<IntersectionObserver | null>(null);
@@ -32,10 +30,8 @@ export default function HomePage() {
           if (entry.isIntersecting) {
             setCurrentID(`/#${entry.target.id}`);
             if (entry.target.id === "home") {
-              setHideRegButton(true);
               setShowUpButton(true);
             } else {
-              setHideRegButton(false);
               setShowUpButton(false);
             }
           }
@@ -57,12 +53,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <NavBar
-        current={curr_id}
-        logoType={nav_logo_type}
-        fix_size
-        hideReg={hide_reg_button}
-      />
+      <NavBar current={curr_id} logoType={nav_logo_type} hideReg={true} />
       <main className={styles.main} id="main" ref={main_ref}>
         <BlurFilter />
         <section

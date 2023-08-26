@@ -1,0 +1,93 @@
+.container {
+  padding: 50px 30px 0px 30px;
+  background-color: black;
+  margin-bottom: -20px;
+}
+.head {
+  text-align: center;
+  font-size: 4em;
+  margin-top: 55px;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+}
+.description > p {
+  text-align: center;
+  max-width: 835px;
+  margin: 44px 0 0 0;
+  font-size: 1.2em;
+}
+.all_teams {
+  padding: 40px 0;
+}
+.team {
+  padding: 70px 0;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.093);
+}
+.team:last-child {
+  border-bottom: none;
+}
+.team_name {
+  padding: 20px 0;
+  font-size: 2em;
+  background-color: black;
+  position: sticky;
+  top: -1px;
+  padding-top: 84px;
+  width: 300px;
+  min-width: 300px;
+  height: 4em;
+}
+.team_mems {
+  display: flex;
+  gap: 30px 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+.mem_img {
+  border-radius: 10px;
+}
+.mem_name {
+  margin: 8px 0 4px 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.mem_pos {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .team {
+    flex-direction: column;
+    margin: 50px 0;
+    padding: 0;
+    border-bottom: none;
+  }
+  .team_name {
+    width: auto;
+    min-width: auto;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .team_name {
+    text-align: center;
+    justify-content: space-between;
+  }
+  .team_mems {
+    justify-content: center;
+  }
+}

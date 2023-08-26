@@ -38,3 +38,11 @@
     margin: 0;
   }
 }
+@media screen and (min-width: 700px) {
+  .button {
+    display: none;
+  }
+  .text > div {
+    height: 100% !important;
+  }
+}
