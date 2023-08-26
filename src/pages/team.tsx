@@ -2,12 +2,18 @@ import Footer from "@/components/home/footer";
 import NavBar from "@/components/navbar/navbar";
 import style from "../components/team/team.module.css";
 import { inter, montserrat } from "@/lib/fonts";
-import { MemberCard, TeamCard, team_data } from "@/components/team/team";
+import {
+  MemberCard,
+  TeamCard,
+  TeamsHead,
+  team_data,
+} from "@/components/team/team";
 import { cssClasses } from "@/lib/lib";
 
 export default function Team() {
   return (
     <>
+      <TeamsHead />
       <NavBar fix_size />
 
       <main className={style.container}>

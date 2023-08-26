@@ -4,6 +4,7 @@ import { cssClasses } from "@/lib/lib";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 type TeamCardProps = {
   name: string;
@@ -14,10 +15,7 @@ export const TeamCard = ({ name, children }: TeamCardProps) => {
   return (
     <div className={style.team} id={name.split(" ").join("_").toLowerCase()}>
       <h2 className={cssClasses(montserrat.className, style.team_name)}>
-        <Link href={`#${name.split(" ").join("_").toLowerCase()}`}>
-          {" "}
-          {name}
-        </Link>
+        <Link href={`#${name.split(" ").join("_").toLowerCase()}`}>{name}</Link>
       </h2>
       <div className={style.team_mems}>{children}</div>
     </div>
@@ -34,13 +32,32 @@ export const MemberCard = ({ member }: { member: TeamMemData }) => {
         width={200}
         height={200}
       />
-      <div className={cssClasses(montserrat.className, style.mem_name)}>
+      <div
+        className={cssClasses(montserrat.className, style.mem_name)}
+        title={member.name}
+      >
         {member.name}
       </div>
       <div className={cssClasses(montserrat.className, style.mem_pos)}>
         {member.is_leader ? "Team Leader" : "Team Member"}
       </div>
     </div>
+  );
+};
+export const TeamsHead = () => {
+  return (
+    <Head>
+      <title>Meet Our Team | ideanix</title>
+      <meta
+        name="description"
+        content="Meet the IdeaniX Organizing Committee and Team Leads driving innovation and entrepreneurship. Learn about their expertise and dedication to empower participants' creative journeys."
+      />
+      <meta
+        name="keywords"
+        content="IdeaniX, Organizing Committee, Team Leads, Innovation, Entrepreneurship, Technology, Mentorship"
+      />
+      <link rel="icon" href="/favicon-96x96.png" type="image/png" />
+    </Head>
   );
 };
 export interface TeamMemData {
