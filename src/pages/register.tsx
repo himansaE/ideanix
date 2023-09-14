@@ -252,7 +252,11 @@ const STAGE = process.env.NEXT_PUBLIC_STAGE;
 const REGISTER_FORM_LINK = "https://forms.gle/yXECKqBufWnGv4eE9";
 
 const Register = () => {
-  const shouldRedirect = STAGE == "1";
+  if (STAGE == "2") return <div></div>;
+  return <Form shouldRedirect={STAGE == "1"}></Form>;
+};
+
+const Form = ({ shouldRedirect }: { shouldRedirect: boolean }) => {
   const router = useRouter();
 
   useEffect(() => {

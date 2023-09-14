@@ -42,6 +42,7 @@
   width: 300px;
   min-width: 300px;
   height: 4em;
+  z-index: 1;
 }
 .team_name > a:hover {
   text-decoration: underline;
@@ -66,6 +67,9 @@
   background-color: var(--background-color);
   box-shadow: 1px 0 4px var(--background-color);
 }
+.img {
+  position: relative;
+}
 .mem_img {
   border-radius: 10px;
   object-fit: cover;
@@ -89,6 +93,33 @@
   top: 0;
   right: 0;
   filter: brightness(0.2);
+}
+.icon {
+  align-items: center;
+  display: flex;
+  padding: 6px;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.44);
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.136);
+}
+.icons {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  transform: translate(0, -55px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 -5px;
+}
+.icon.icon > svg {
+  color: rgba(255, 255, 255, 0.845);
+}
+.icon.icon:hover > svg {
+  color: rgba(255, 255, 255, 0.648);
 }
 @media screen and (max-width: 900px) {
   .team {
