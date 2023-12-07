@@ -186,7 +186,7 @@ export default function Home({
             ideas into reality.
           </div>
           <div className={styles.home_button_list}>
-            <LinkButton text="Registration Ended" link="/register" />
+            <LinkButton text="Registration Ended" link="#" />
 
             <ActionButton
               text="Watch Intro "

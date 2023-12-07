@@ -59,7 +59,25 @@ export default function NavBar({
   const [side_nav_open, setSideNavOpen] = useState(false);
   return (
     <>
-      <SideNav open={side_nav_open} data={nav_items} setter={setSideNavOpen} />
+      <SideNav
+        open={side_nav_open}
+        data={[
+          ...nav_items,
+          {
+            name: "Our Team",
+            url: "/team",
+          },
+          {
+            name: "Sponsors",
+            url: "/#sponsor",
+          },
+          {
+            name: "Source Code",
+            url: "https://github.com/himansaE/ideanix",
+          },
+        ]}
+        setter={setSideNavOpen}
+      />
       <nav className={cssClasses(style.nav, side_nav_open ? style.open_d : "")}>
         <Link href="/#home" aria-label="Home">
           <div className={style.logo_con}>
